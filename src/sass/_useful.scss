@@ -1,0 +1,241 @@
+.useful {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__swiper-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__pagination {
+    margin-bottom: 26px;
+  }
+
+  &__buttons {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color .2s ease-in-out;
+
+    &:focus-visible .useful__svg path {
+      stroke: $white;
+    }
+
+    &:focus-visible {
+      background-color: $primaryLight;
+    }
+
+    &:active .useful__svg path {
+      stroke: $white;
+    }
+
+    &:active .useful__svg circle {
+      stroke: $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+    }
+
+    &:disabled .useful__svg path {
+      stroke: $gray;
+    }
+
+    &:disabled .useful__svg circle {
+      stroke: $gray;
+    }
+
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  &__svg {
+    width: 32px;
+    height: 32px;
+
+    circle {
+      transition: stroke .2s ease-in-out;
+    }
+
+    path {
+      transition: stroke .2s ease-in-out;
+    }
+  }
+
+  &__button-prev {
+    margin-right: 13px;
+  }
+
+  &__slide {
+    height: auto;
+    background-color: $grayLight;
+    border-radius: $br;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .useful__img {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__slide-one {
+    .useful__img {
+      background-image: url("img/useful1.jpg");
+    }
+  }
+
+  &__slide-two {
+    .useful__img {
+      background-image: url("img/useful2.jpg");
+    }
+  }
+
+  &__slide-three {
+    .useful__img {
+      background-image: url("img/useful3.jpg");
+    }
+  }
+
+  &__slide-four {
+    .useful__img {
+      background-image: url("img/useful4.jpg");
+    }
+  }
+
+  &__slide-five {
+    .useful__img {
+      background-image: url("img/useful5.jpg");
+    }
+  }
+
+  &__img {
+    width: 100%;
+    min-height: 426px;
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 27px 30px 30px;
+    flex-grow: 1;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 38px;
+    color: $black;
+    font-size: $titleFs;
+    line-height: 33px;
+  }
+
+  &__btn {
+    padding: 15px 33px;
+    border-radius: $br;
+    color: $primary;
+    font-weight: 600;
+    font-size: $biggerFs;
+    line-height: $biggerLh;
+    outline: none;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $primaryLight;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border-color: $primaryShade;
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .useful {
+    &__slide-one {
+      .useful__img {
+        background-image: url("img/useful1-1024.jpg");
+      }
+    }
+
+    &__slide-two {
+      .useful__img {
+        background-image: url("img/useful2-1024.jpg");
+      }
+    }
+
+    &__slide-three {
+      .useful__img {
+        background-image: url("img/useful3-1024.jpg");
+      }
+    }
+
+    &__slide-four {
+      .useful__img {
+        background-image: url("img/useful4-1024.jpg");
+      }
+    }
+
+    &__slide-five {
+      .useful__img {
+        background-image: url("img/useful5-1024.jpg");
+      }
+    }
+
+    &__img {
+      min-height: 202px;
+    }
+
+    &__content {
+      padding: 30px 30px 30px 30px;
+    }
+
+    &__text {
+      margin-bottom: 30px;
+      font-size: $biggerFs;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .useful {
+    &__title {
+      width: 100%;
+    }
+
+    &__pagination {
+      width: 100%;
+      margin-bottom: 0;
+      order: 3;
+      justify-content: center;
+    }
+
+    &__swiper-container {
+      margin-bottom: 23px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .useful {
+    &__swiper-container {
+      margin-bottom: $lesserGap;
+    }
+  }
+}

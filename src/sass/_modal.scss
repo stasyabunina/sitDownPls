@@ -1,0 +1,562 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+  z-index: 200;
+
+  &__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    transition: background-color .2s ease-in-out;
+
+    &:focus-visible .modal__close-svg path {
+      fill: $primaryShade;
+    }
+
+    &:focus-visible {
+      background-color: $bgPink;
+    }
+
+    &:active .modal__close-svg path {
+      fill: $primaryShade;
+    }
+  }
+
+  &__close-svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      transition: fill .2s ease-in-out;
+    }
+  }
+}
+
+.buy {
+  &__wrapper {
+    width: 100%;
+    max-width: 624px;
+    position: relative;
+    padding: 30px;
+    background-color: $white;
+    border-radius: $br;
+    display: none;
+  }
+
+  &__success {
+    min-height: 361px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__svg {
+    width: 172px;
+    height: 117px;
+    margin-bottom: 32px;
+    display: flex;
+  }
+
+  &__success-text {
+    font-size: 32px;
+    line-height: 32px;
+    color: $black;
+  }
+
+  &__form-wrapper {
+    display: block;
+    width: 100%;
+    min-height: 361px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    color: $black;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 30px;
+    max-width: 374px;
+    line-height: 19px;
+  }
+
+  &__form {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 7px 18px;
+    font-size: $biggerFs;
+    line-height: 40px;
+    color: $black;
+    background-color: $grayLight;
+    outline: none;
+    border: none;
+    border-radius: $br;
+    transition: background-color .2s ease-in-out, outline .2s ease-in-out;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus-visible {
+      outline: $primary 1px solid;
+      background-color: $pinkLight;
+    }
+
+    &.is-invalid {
+      outline: #FF6972 1px solid;
+      background-color: $grayLight;
+    }
+
+    &.is-valid {
+      outline: #B8EC64 1px solid;
+      background-color: $grayLight;
+    }
+  }
+
+  &__btn {
+    padding: 17px 33px;
+    margin-bottom: 12px;
+    background-color: $primary;
+    color: $white;
+    font-size: $biggerFs;
+    font-weight: 600;
+    line-height: $biggerLh;
+    outline: none;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $primaryLight;
+      border-color: $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border-color: $primaryShade;
+    }
+
+    &:disabled {
+      color: $gray;
+      background-color: $grayMd;
+      border-color: $grayMd;
+    }
+  }
+
+  &__checkbox-label {
+    cursor: pointer;
+  }
+
+  &__checkbox-text {
+    display: inline-block;
+    color: $black;
+    line-height: 19px;
+    vertical-align: middle;
+  }
+
+  &__link {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  &__visible-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+    transition: background-color .2s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 5px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      opacity: 0;
+      transform: translate(-45%, -65%) rotate(-45deg);
+      transition: opacity .2s ease-in-out;
+    }
+  }
+
+  &__checkbox-input {
+    &:focus-visible+.buy__visible-checkbox {
+      outline: 2px solid $primaryLight;
+      outline-offset: 1px;
+    }
+
+    &:checked~.buy__visible-checkbox::before {
+      opacity: 1;
+    }
+
+    &:checked~.buy__visible-checkbox {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+}
+
+.buy--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.buy__wrapper--visible {
+  display: block;
+}
+
+.buy__form-wrapper--hidden {
+  display: none;
+}
+
+.buy__success--visible {
+  display: flex;
+}
+
+@media (max-width: 750px) {
+  .buy {
+    &__wrapper {
+      max-width: 450px;
+    }
+
+    &__success-text {
+      font-size: $titleFs;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .modal {
+    &__close-btn {
+      width: 12px;
+      height: 12px;
+      top: $lesserGap;
+      right: $lesserGap;
+    }
+
+    &__close-svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .buy {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    &__wrapper {
+      max-width: none;
+      padding: 30px 16px 30px 16px;
+    }
+
+    &__form-wrapper {
+      min-height: 327px;
+    }
+
+    &__success {
+      min-height: 156px;
+    }
+
+    &__svg {
+      width: 73px;
+      height: 50px;
+      margin-bottom: 14px;
+    }
+
+    &__success-text {
+      max-width: 194px;
+      text-align: center;
+      font-size: $biggerFs;
+      line-height: $biggerLh;
+    }
+
+    &__title {
+      font-size: $titleFs;
+      line-height: 24px;
+    }
+
+    &__text {
+      margin-bottom: $lesserGap;
+    }
+
+    &__label {
+      margin-bottom: $lesserGap;
+    }
+
+    &__checkbox-label {
+      width: 270px;
+      display: block;
+    }
+
+    &__checkbox-text {
+      font-size: 12px;
+      line-height: 16px;
+      white-space: nowrap
+    }
+
+    &__visible-checkbox {
+      margin-right: 3px;
+    }
+  }
+}
+
+.buy__checkbox-label~.is-label-invalid {
+  padding-left: 0;
+}
+
+.preview {
+  padding: 0 80px;
+
+  &__buttons {
+    display: none;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    background-color: $white;
+    border-radius: $br;
+    display: none;
+  }
+
+  &__secondary-slider-wrapper {
+    background-color: $grayLight;
+    border-bottom-left-radius: $br;
+    border-bottom-right-radius: $br;
+    padding: 20px 51px;
+  }
+
+  &__primary-slider-wrapper {
+    padding: 50px 108px;
+  }
+}
+
+.preview-primary-slider {
+  &__slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.preview-secondary-slider {
+  &__slide {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    max-height: 126px;
+    display: block;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.preview--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.preview__wrapper--visible {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .preview {
+    padding: 0 36px;
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__primary-slider-wrapper {
+      padding: 50px 65px;
+    }
+
+    &__buttons {
+      display: flex;
+      position: absolute;
+      bottom: 67px;
+      border: none;
+      outline: none;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: background-color .2s ease-in-out;
+      z-index: 210;
+
+      &:focus-visible .preview__btn-svg path {
+        stroke: $white;
+      }
+
+      &:focus-visible .preview__btn-svg {
+        background-color: $primaryLight;
+      }
+
+      &:active .preview__btn-svg path {
+        stroke: $white;
+      }
+
+      &:active .preview__btn-svg circle {
+        stroke: $primaryShade;
+      }
+
+      &:active .preview__btn-svg {
+        background-color: $primaryShade;
+      }
+
+      &:disabled .preview__btn-svg path {
+        stroke: $gray;
+      }
+
+      &:disabled .preview__btn-svg circle {
+        stroke: $gray;
+      }
+
+      &:disabled {
+        background-color: transparent;
+      }
+    }
+
+    &__button-prev {
+      left: 16px;
+    }
+
+    &__button-next {
+      right: 16px;
+    }
+
+    &__btn-svg {
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      transition: background-color .2s ease-in-out;
+
+      circle {
+        transition: stroke .2s ease-in-out;
+      }
+
+      path {
+        transition: stroke .2s ease-in-out;
+      }
+    }
+
+    &__secondary-slider-wrapper {
+      padding: 20px 67px;
+    }
+  }
+
+  .preview-primary-slider {
+    &__img {
+      max-height: 322px;
+    }
+  }
+}
+
+@media (max-width: 962px) {
+  .preview {
+    padding: 0 72px;
+
+    &__primary-slider-wrapper {
+      padding: 50px 21px;
+    }
+
+    &__secondary-slider-wrapper {
+      padding: 20px 79px;
+    }
+  }
+
+  .preview-primary-slider {
+    &__img {
+      max-height: 228px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .preview {
+    padding: 0 12px;
+
+    &__primary-slider-wrapper {
+      padding: 32px 16px;
+    }
+
+    &__secondary-slider-wrapper {
+      padding: 16px 62px;
+    }
+
+    &__buttons {
+      bottom: 43px;
+    }
+  }
+
+  .preview-secondary-slider {
+    &__img {
+      max-height: 86px;
+    }
+  }
+}

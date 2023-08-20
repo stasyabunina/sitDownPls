@@ -1,0 +1,34 @@
+.breadcrumbs {
+  margin-bottom: $gap;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item:not(:last-child)::after {
+    content: "/";
+    padding: 0 3px 0 6px;
+    color: $gray;
+}
+
+  &__link {
+    color: $gray;
+    line-height: $defaultLh;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
+    outline: none;
+
+    &:focus-visible {
+      color: $primaryShade;
+      background-color: $bgPink;
+    }
+
+    &:active {
+      color: $primaryShade;
+    }
+
+    &--active {
+      color: $primaryShade;
+    }
+  }
+}

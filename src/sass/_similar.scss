@@ -1,0 +1,275 @@
+.similar {
+  &__title-pagination {
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__pagination {
+    margin-bottom: 24px;
+  }
+
+  &__buttons {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color .2s ease-in-out;
+
+    &:focus-visible .similar__btn-svg path {
+      stroke: $white;
+    }
+
+    &:focus-visible {
+      background-color: $primaryLight;
+    }
+
+    &:active .similar__btn-svg path {
+      stroke: $white;
+    }
+
+    &:active .similar__btn-svg circle {
+      stroke: $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+    }
+
+    &:disabled .similar__btn-svg path {
+      stroke: $gray;
+    }
+
+    &:disabled .similar__btn-svg circle {
+      stroke: $gray;
+    }
+
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  &__btn-svg {
+    width: 32px;
+    height: 32px;
+
+    circle {
+      transition: stroke .2s ease-in-out;
+    }
+
+    path {
+      transition: stroke .2s ease-in-out;
+    }
+  }
+
+  &__button-prev {
+    margin-right: 13px;
+  }
+
+  &__title {
+    font-size: $titleFs;
+    line-height: 31px;
+  }
+
+  &__swiper-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__slide {
+    display: flex;
+    height: auto;
+    background-color: $grayLight;
+    border-radius: $br;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 58px 15px 30px 15px;
+  }
+
+  &__top {
+    height: 100%;
+    width: 100%;
+    margin-bottom: $lesserGap;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__card-content {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+
+  &__name-price {
+    margin-bottom: 24px;
+  }
+
+  &__card-name {
+    margin: 0;
+    margin-bottom: 22px;
+    font-size: $titleFs;
+    font-weight: 400;
+    line-height: 31px;
+    color: $black;
+    word-break: break-all;
+  }
+
+  &__price {
+    display: block;
+    font-size: $biggerFs;
+    line-height: 21px;
+    color: $grayShade;
+  }
+
+  &__card-btn {
+    padding: 17px 33px 15px 33px;
+    outline: none;
+    color: $primary;
+    font-size: $biggerFs;
+    font-weight: 600;
+    line-height: $biggerLh;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $primaryLight;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border-color: $primaryShade;
+      color: $white;
+    }
+  }
+
+  &__svg-number {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    align-items: center;
+  }
+
+  &__svg {
+    display: flex;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+  }
+
+  &__number {
+    display: block;
+    font-size: $biggerFs;
+    line-height: 21px;
+    color: $secondary;
+  }
+}
+
+@media (max-width: 1200px) {
+  .similar {
+    &__card-name {
+      max-width: 236px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .similar {
+    &__pagination {
+      margin-bottom: 0;
+      justify-content: center;
+      order: 3;
+      width: 100%;
+    }
+
+    &__swiper-container {
+      margin-bottom: 23px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .similar {
+    &__swiper-container {
+      margin-bottom: $lesserGap;
+    }
+
+    &__slide {
+      min-height: 278px;
+    }
+
+    &__card {
+      padding: 38px 16px 16px 16px;
+    }
+
+    &__card-content {
+      width: 100%;
+      padding: 0;
+    }
+
+    &__name-price {
+      margin-bottom: $lesserGap;
+    }
+
+    &__card-name {
+      max-width: 160px;
+      margin-bottom: $lesserGap;
+      font-size: 16px;
+      line-height: 21px;
+      word-break: normal;
+    }
+
+    &__card-btn {
+      box-sizing: border-box;
+      justify-content: center;
+      width: 100%;
+      padding: 9px 23px;
+    }
+
+    &__img-wrapper {
+      width: 100%;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__svg-number {
+      top: 16px;
+      left: 16px;
+    }
+
+    &__svg {
+      width: 13px;
+      height: 12px;
+      margin-right: 6px;
+    }
+
+    &__number {
+      font-size: 12px;
+      line-height: 15.6px;
+    }
+
+    &__top {
+      margin-bottom: 5px;
+      align-items: center;
+    }
+  }
+}

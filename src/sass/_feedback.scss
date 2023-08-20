@@ -1,0 +1,271 @@
+.feedback {
+  &__form-wrapper {
+    width: 50%;
+    margin-right: $gap;
+  }
+
+  &__img {
+    width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__text-tooltip {
+    margin-bottom: $lesserGap;
+  }
+
+  &__text {
+    margin: 0;
+    margin-right: 3px;
+    display: inline;
+    color: $grayShade;
+    line-height: 19px;
+    vertical-align: middle;
+  }
+
+  &__tooltip {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("img/tooltip.svg");
+    transition: background-image .2s ease-in-out;
+
+    &:focus-visible {
+      background-image: url("img/tooltip-hover.svg");
+    }
+  }
+
+  &__form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 7px 18px;
+    font-size: $biggerFs;
+    line-height: 40px;
+    color: $black;
+    background-color: $grayLight;
+    outline: none;
+    border: none;
+    border-radius: $br;
+    transition: background-color .2s ease-in-out, outline .2s ease-in-out;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus-visible {
+      outline: $primary 1px solid;
+      background-color: $pinkLight;
+    }
+
+    &.is-invalid {
+      outline: #FF6972 1px solid;
+      background-color: $grayLight;
+    }
+
+    &.is-valid {
+      outline: #B8EC64 1px solid;
+      background-color: $grayLight;
+    }
+  }
+
+  &__btn {
+    padding: 17px 33px;
+    margin-bottom: 12px;
+    background-color: $primary;
+    color: $white;
+    font-size: $biggerFs;
+    font-weight: 600;
+    line-height: $biggerLh;
+    outline: none;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $primaryLight;
+      border-color: $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border-color: $primaryShade;
+    }
+
+    &:disabled {
+      color: $gray;
+      background-color: $grayMd;
+      border-color: $grayMd;
+    }
+  }
+
+  &__checkbox-label {
+    display: block;
+    cursor: pointer;
+  }
+
+  &__checkbox-text {
+    display: inline-block;
+    color: $black;
+    line-height: 19px;
+    vertical-align: middle;
+  }
+
+  &__link {
+    color: $primary;
+    text-decoration: underline;
+
+    &:focus-visible {
+      outline-offset: 1px;
+      outline: 2px $primary solid;
+    }
+  }
+
+  &__visible-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: middle;
+    transition: background-color .2s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 5px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      opacity: 0;
+      transform: translate(-45%, -65%) rotate(-45deg);
+      transition: opacity .2s ease-in-out;
+    }
+  }
+
+  &__checkbox-input {
+    &:focus-visible+.feedback__visible-checkbox {
+      outline: 2px solid $primaryLight;
+      outline-offset: 1px;
+    }
+
+    &:checked~.feedback__visible-checkbox::before {
+      opacity: 1;
+    }
+
+    &:checked~.feedback__visible-checkbox {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &__img {
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("img/feedback.jpg");
+  }
+}
+
+.tippy-box[data-theme~='gray'] {
+  padding: 5px;
+  background-color: $black;
+  color: $white;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 14px;
+  border-radius: 0;
+}
+
+.tippy-box[data-theme~='gray'][data-placement^='top']>.tippy-arrow::before {
+  border-top-color: $black;
+}
+
+.is-label-invalid {
+  padding-left: 18px;
+  margin-bottom: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: $biggerLh;
+}
+
+.feedback__checkbox-label~.is-label-invalid {
+  padding-left: 0;
+}
+
+@media (max-width: 1200px) {
+  .feedback {
+    &__form-wrapper {
+      width: 40%;
+    }
+
+    &__img {
+      width: 60%;
+      background-position: right center;
+      background-size: 93% auto;
+      background-image: url("img/feedback-1024.jpg");
+    }
+  }
+}
+
+@media (max-width: 962px) {
+  .feedback {
+    &__form-wrapper {
+      width: 60%;
+    }
+
+    &__img {
+      width: 40%;
+      background-position: right center;
+      background-size: auto 94%;
+      background-image: url("img/feedback-768.jpg");
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .feedback {
+    &__form-wrapper {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .feedback {
+    &__checkbox-text {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__visible-checkbox {
+      margin-right: 3px;
+    }
+  }
+}

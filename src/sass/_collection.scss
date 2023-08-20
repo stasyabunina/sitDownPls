@@ -1,0 +1,131 @@
+.collection {
+  &__wrapper {
+    background-repeat: no-repeat;
+    background-color: $black;
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/collection.jpg");
+  }
+
+  &__content {
+    padding: 161px 0 150px 0;
+  }
+
+  &__title {
+    max-width: 508px;
+    margin: 0;
+    margin-bottom: 49px;
+    color: $white;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 57.6px;
+  }
+
+  &__span {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "PlayfairDisplayBlack", "Times New Roman", serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: $gold;
+  }
+
+  &__btn {
+    padding: 20px 29.5px;
+    font-weight: 700;
+    font-size: $biggerFs;
+    line-height: $biggerLh;
+    color: $white;
+    background-color: $primary;
+    outline: none;
+    transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
+
+    &:focus-visible {
+      background-color: $primaryLight;
+      border-color: $primaryShade;
+    }
+
+    &:active {
+      background-color: $primaryShade;
+      border-color: $primaryShade;
+    }
+
+    &:disabled {
+      color: $gray;
+      background-color: $grayMd;
+      border-color: $grayMd;
+    }
+  }
+
+  &__btn-wrapper_mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .collection {
+    &__wrapper {
+      background-image: url("img/collection-1024.jpg");
+    }
+  }
+}
+
+@media (max-width: 962px) {
+  .collection {
+    &__wrapper {
+      background-image: url("img/collection-768.jpg");
+    }
+
+    &__container {
+      padding: 0 36px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .collection {
+    &__wrapper {
+      margin-bottom: 32px;
+      background-image: url("img/collection-320.jpg");
+    }
+
+    &__container {
+      padding: 0 12px;
+    }
+
+    &__mobile-container {
+      width: 100%;
+    }
+
+    &__content {
+      padding: 36px 0 110px 0;
+    }
+
+    &__title {
+      max-width: 230px;
+      margin-bottom: 0;
+      font-size: $biggerFs;
+      line-height: 22px;
+    }
+
+    &__span {
+      margin-bottom: 2px;
+      font-size: $titleFs;
+      line-height: 17px;
+    }
+
+    &__btn_desktop {
+      display: none;
+    }
+
+    &__btn-wrapper_mobile {
+      display: flex;
+      width: 100%;
+    }
+
+    &__btn_mobile {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

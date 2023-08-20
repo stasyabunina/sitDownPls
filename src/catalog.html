@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SitDownPls - интернет-магазин мебели</title>
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-700.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-700.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-600.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-600.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/open-sans-v35-cyrillic_latin-regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/PlayfairDisplay-Black.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/PlayfairDisplay-Black.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="libs/choices.min.css">
+  <link rel="stylesheet" href="libs/swiper.min.css">
+  <link rel="stylesheet" href="libs/nouislider.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="sdp.ico">
+  <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicons/apple-icon.png" type="image/png">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+
+<body>
+  @@include('_include/_header.html')
+  <main class="main catalog-main">
+    <h1 class="visually-hidden">SitDownPls Мебельный магазин</h1>
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="breadcrumbs__wrapper">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Каталог</a></li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Диваны</a></li>
+            <li class="breadcrumbs__item"><a class="breadcrumbs__link--active">Прямые диваны</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="section catalog">
+      <div class="container">
+        <div class="catalog__wrapper flex">
+          <h2 class="section__title catalog__title catalog__title_mobile">Каталог</h2>
+          <aside class="catalog__aside">
+            <div class="catalog__filter filter catalog__filter">
+              <h3 class="filter__title filter__title_desktop">Фильтровать&nbsp;по:</h3>
+              <h3 class="filter__title filter__title_mobile">Фильтры:</h3>
+              <ul class="filter__list">
+                <li class="filter__item">
+                  <h4 class="filter__subtitle">Категория</h4>
+                  <button type="button" class="filter__btn btn">
+                    <span class="filter__btn-span">Категория</span>
+                    <svg class="filter__btn-svg">
+                      <use xlink:href="img/sprite.svg#filter"></use>
+                    </svg>
+                  </button>
+                  <ul class="filter__sublist filter__category">
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden" checked>
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Диваны</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Кресла</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Пуфы</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Кровати</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Тумбы</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Комоды</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Стулья</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Столы</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Аксессуары</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="filter__item">
+                  <h4 class="filter__subtitle">Цена</h4>
+                  <button type="button" class="filter__btn btn">
+                    <span class="filter__btn-span">Цена</span>
+                    <svg class="filter__btn-svg">
+                      <use xlink:href="img/sprite.svg#filter"></use>
+                    </svg>
+                  </button>
+                  <div class="filter__price filter__sublist">
+                    <label class="filter__price-label">
+                      <span class="filter__price-span">от</span>
+                      <input class="filter__price-input filter__price-input_lower" type="text">
+                    </label>
+                    <label class="filter__price-label">
+                      <span class="filter__price-span">до</span>
+                      <input class="filter__price-input filter__price-input_higher" type="text">
+                    </label>
+                  </div>
+                  <div class="filter__price-slider"></div>
+                </li>
+                <li class="filter__item">
+                  <h4 class="filter__subtitle">Скидка</h4>
+                  <button type="button" class="filter__btn btn">
+                    <span class="filter__btn-span">Скидка</span>
+                    <svg class="filter__btn-svg">
+                      <use xlink:href="img/sprite.svg#filter"></use>
+                    </svg>
+                  </button>
+                  <ul class="filter__sublist filter__discount">
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Более 5&nbsp;000</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Менее 5&nbsp;000</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden" checked>
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Не&nbsp;важно</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="filter__item">
+                  <h4 class="filter__subtitle">Цвет</h4>
+                  <button type="button" class="filter__btn btn">
+                    <span class="filter__btn-span">Цвет</span>
+                    <svg class="filter__btn-svg">
+                      <use xlink:href="img/sprite.svg#filter"></use>
+                    </svg>
+                  </button>
+                  <ul class="filter__sublist filter__color">
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Коричневый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Черный</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Бежевый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Серый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Белый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Синий</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden" checked>
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Оранжевый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Желтый</span>
+                      </label>
+                    </li>
+                    <li class="filter__subitem">
+                      <label class="filter__checkbox-label">
+                        <input type="checkbox" class="filter__checkbox-input visually-hidden">
+                        <span class="filter__visible-checkbox"></span>
+                        <span class="filter__checkbox-text">Зеленый</span>
+                      </label>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <article class="filter__card">
+                <h3 class="filter__card-title"><span class="filter__card-span">Оксфорд 1950</span>Новая коллекция
+                  изысканных
+                  кресел</h3>
+                <a href="catalog.html" class="filter__link">
+                  <span class="filter__link-span">В&nbsp;каталог</span>
+                  <svg class="filter__link-svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2" />
+                  </svg>
+                </a>
+              </article>
+            </div>
+          </aside>
+          <div class="catalog__right">
+            <h2 class="section__title catalog__title catalog__title_desktop">Каталог</h2>
+            <div class="swiper-container catalog__swiper-container">
+              <ul class="swiper-wrapper catalog__swiper-wrapper">
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">5,0</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog1-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog1-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog1.png" alt="Диван кожаный R-94">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван кожаный &quot;R&#8209;94&quot;</h3>
+                        <span class="catalog__price">94 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,9</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog2-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog2-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog2.png" alt="Диван апартековый T-75">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван апартековый &quot;T&#8209;75&quot;</h3>
+                        <span class="catalog__price">69 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,8</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog3-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog3-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog3.png" alt="Диван тканевый D-31">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван тканевый &quot;D&#8209;31&quot;</h3>
+                        <span class="catalog__price">28 490 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,8</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog4-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog4-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog4.png" alt="Диван велюровый Y-68">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван велюровый &quot;Y&#8209;68&quot;</h3>
+                        <span class="catalog__price">22 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,8</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog5-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog5-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog5.png" alt="Диван из шинила W-95">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван из&nbsp;шинила &quot;W&#8209;95&quot;</h3>
+                        <span class="catalog__price">22 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,8</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog6-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog6-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog6.png" alt="Диван флоковый G-41">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван флоковый &quot;G&#8209;41&quot;</h3>
+                        <span class="catalog__price">17 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,8</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog7-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog7-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog7.png" alt="Диван шиниловый V-43">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван шиниловый &quot;V&#8209;43&quot;</h3>
+                        <span class="catalog__price">19 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,7</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog8-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog8-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog8.png" alt="Диван велюровый S-99">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван велюровый &quot;S&#8209;99&quot;</h3>
+                        <span class="catalog__price">19 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,7</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog9-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog9-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog9.png" alt="Диван из кожзама F-85">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван из&nbsp;кожзама &quot;F&#8209;85&quot;</h3>
+                        <span class="catalog__price">26 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,6</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog10-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog10-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" src="img/catalog10.png" alt="Диван флоковый H-64">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван флоковый &quot;H&#8209;64&quot;</h3>
+                        <span class="catalog__price">25 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,6</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog11-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog11-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog11.png" alt="Диван флоковый H-58">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван флоковый &quot;H&#8209;58&quot;</h3>
+                        <span class="catalog__price">23 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,6</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog12-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog12-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog12.png" alt="Диван из кожзама R-43">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван из&nbsp;кожзама &quot;R&#8209;43&quot;</h3>
+                        <span class="catalog__price">33 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,6</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog13-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog13-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog13.png" alt="Диван из шинила С-42">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван из&nbsp;шинила &quot;С&#8209;42&quot;</h3>
+                        <span class="catalog__price">18 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,6</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog14-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog14-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog14.png" alt="Диван велюровый U-58">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван велюровый &quot;U&#8209;58&quot;</h3>
+                        <span class="catalog__price">21 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,5</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog15-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog15-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog15.png" alt="Диван флоковый F-41">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван флоковый &quot;F&#8209;41&quot;</h3>
+                        <span class="catalog__price">17 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,5</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog16-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog16-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog16.png" alt="Диван велюровый R-85">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван велюровый &quot;R&#8209;85&quot;</h3>
+                        <span class="catalog__price">34 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,5</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog17-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog17-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog17.png" alt="Диван велюровый S-44">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван велюровый &quot;S&#8209;44&quot;</h3>
+                        <span class="catalog__price">19 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide catalog__slide">
+                  <article class="catalog__card">
+                    <div class="catalog__svg-rating flex">
+                      <svg class="catalog__svg">
+                        <use xlink:href="img/sprite.svg#star"></use>
+                      </svg>
+                      <span class="visually-hidden">Звезды</span>
+                      <span class="catalog__rating">4,4</span>
+                    </div>
+                    <div class="catalog__top">
+                      <picture class="catalog__img-wrapper">
+                        <source srcset="img/catalog18-320.png" media="(max-width: 576px)">
+                        <source srcset="img/catalog18-1024.png" media="(max-width: 1200px)">
+                        <img class="catalog__img lazyload" data-src="img/catalog18.png" alt="Диван из&nbsp;шинила С-80">
+                      </picture>
+                    </div>
+                    <div class="catalog__card-content">
+                      <div class="catalog__name-price">
+                        <h3 class="catalog__card-name">Диван из&nbsp;шинила &quot;С&#8209;80&quot;</h3>
+                        <span class="catalog__price">20 990 руб</span>
+                      </div>
+                      <button type="button" class="catalog__card-btn btn flex">Купить</button>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+              <div class="catalog__pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  @@include('_include/_footer.html')
+  <script src="libs/choices.min.js"></script>
+  <script src="libs/swiper.min.js"></script>
+  <script src="libs/nouislider.min.js"></script>
+  <script src="libs/gsap.min.js"></script>
+  <script src="libs/ScrollTrigger.min.js"></script>
+  <script src="libs/lazyload.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

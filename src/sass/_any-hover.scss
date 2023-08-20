@@ -1,0 +1,417 @@
+@media (any-hover: hover) {
+  .header .header-top .choices.choices:hover::after {
+    border-color: $primaryLight;
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    color: $white;
+    background-color: $primaryLight;
+  }
+
+  .header-top .choices:hover .choices__inner {
+    color: $primaryLight;
+  }
+
+  .header-bottom .choices:hover .choices__inner {
+    border-color: $primary;
+  }
+
+  .header-top {
+    &__tel-info {
+      &:hover .header-top__svg path {
+        fill: $secondaryLight;
+      }
+
+      &:hover .header-top__phone {
+        color: $secondaryLight;
+      }
+    }
+
+    &__link {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &__user {
+      &:hover .header-top__user-svg path {
+        fill: $primaryLight;
+      }
+    }
+
+    &__basket {
+      &:hover .header-top__basket-svg path {
+        fill: $primaryLight;
+      }
+    }
+  }
+
+  .header-middle {
+    &__link {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &__close {
+      &:hover .header-middle__close-svg path {
+        fill: $primary;
+      }
+    }
+
+    &__user {
+      &:hover .header-middle__user-svg path {
+        fill: $primaryLight;
+      }
+    }
+
+    &__basket {
+      &:hover .header-middle__basket-svg path {
+        fill: $primaryLight;
+      }
+    }
+
+    &__link-two {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .header-bottom {
+    &__search {
+      &:hover {
+        background-color: $grayMd;
+        border-color: $grayMd;
+      }
+    }
+
+    &__search-btn {
+      &:hover .header-bottom__search-svg path {
+        stroke: $white;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    &__user {
+      &:hover .header-bottom__user-svg path {
+        fill: $primaryLight;
+      }
+    }
+
+    &__basket {
+      &:hover .header-bottom__basket-svg path {
+        fill: $primaryLight;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    &__link {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .hero {
+    &__swiper-button {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+
+    &__mobile-button {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .offers {
+    &__buttons {
+      &:hover .offers__svg path {
+        stroke: $white;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    &__swiper-button {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  .rating {
+    &__card-btn {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    &__btn {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .collection {
+    &__btn {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .top-category {
+    &__tag-link {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &__link {
+      &:hover .top-category__svg path {
+        stroke: $white;
+      }
+
+      &:hover .top-category__svg {
+        background-color: $primary;
+      }
+
+      &:hover .top-category__span::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &__mobile-btn {
+      &:hover .top-category__svg path {
+        stroke: $white;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .useful {
+    &__buttons {
+      &:hover .useful__svg path {
+        stroke: $white;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    &__btn {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  .feedback {
+    &__tooltip {
+      &:hover {
+        background-image: url("img/tooltip-hover.svg");
+      }
+    }
+
+    &__input {
+      &:hover {
+        background-color: $grayMd;
+      }
+    }
+
+    &__btn {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .footer-top {
+    &__social-link {
+      &:hover .footer-top__svg path {
+        fill: $primary;
+      }
+    }
+  }
+
+  .footer-nav {
+    &__link {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .similar {
+    &__card-btn {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+
+    &__buttons {
+      &:hover .similar__btn-svg path {
+        stroke: $white;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .product {
+    &__buy-btn {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .modal {
+    &__close-btn {
+      &:hover .modal__close-svg path {
+        fill: $primary;
+      }
+    }
+  }
+
+  .buy {
+    &__input {
+      &:hover {
+        background-color: $grayMd;
+      }
+    }
+
+    &__btn {
+      &:hover {
+        background-color: $primaryLight;
+        border-color: $primaryLight;
+      }
+    }
+  }
+
+  .preview {
+    &__buttons {
+      &:hover .preview__btn-svg path {
+        stroke: $white !important;
+      }
+
+      &:hover .preview__btn-svg circle {
+        stroke: $primary !important;
+      }
+
+      &:hover .preview__btn-svg {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .catalog {
+    &__pagination {
+      & .swiper-pagination-bullet {
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+
+        &-active {
+          &:hover {
+            background-color: $primaryShade;
+          }
+        }
+      }
+    }
+
+    &__card-btn {
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  .filter {
+    &__link {
+      &:hover .filter__link-svg path {
+        stroke: $white;
+      }
+
+      &:hover .filter__link-svg {
+        background-color: $primary;
+      }
+
+      &:hover .filter__link-span::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &__price-input {
+      &:hover {
+        border-color: $primary;
+      }
+    }
+  }
+
+  .noUi-horizontal .noUi-handle {
+    &:hover {
+      background-image: url("img/slider-hover.svg");
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .filter {
+      &__subitem {
+        &:hover {
+          background-color: $primaryLight;
+        }
+
+        &:hover .filter__checkbox-text {
+          color: $white;
+        }
+      }
+
+      &__price-label {
+        &:hover {
+          background-color: $primaryLight;
+        }
+
+        &:hover .filter__price-span {
+          color: $white;
+        }
+      }
+
+      &__btn {
+        &:hover {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}
