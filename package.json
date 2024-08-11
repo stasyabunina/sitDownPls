@@ -30,6 +30,7 @@
     "gulp-notify": "^4.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^2.0.3",
-    "gulp-uglify-es": "^3.0.0"
+    "gulp-uglify-es": "^3.0.0",
+    "webpack-stream": "^7.0.0"
   }
 }

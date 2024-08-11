@@ -12,6 +12,7 @@ const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
+const webpack = require('webpack-stream');
 const sass = require('gulp-sass')(require('sass'));
 
 const clean = () => {
@@ -52,8 +53,9 @@ const resources = () => {
 
 const scripts = () => {
   return src(
-    ['src/js/components/lazyload.js', 'src/js/components/choices.js', 'src/js/components/burger.js', 'src/js/components/swiper.js', 'src/js/components/more.js', 'src/js/components/tooltip.js', 'src/js/components/button.js', 'src/js/components/modal.js', 'src/js/components/slider.js', 'src/js/components/filter.js', 'src/js/components/form.js', 'src/js/components/gsap.js', 'src/js/main.js'])
+    ['src/js/components/**.js', 'src/js/main.js'])
     .pipe(sourcemaps.init())
+    .pipe(webpack())
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -87,7 +89,7 @@ const images = () => {
   ])
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 90, progressive: true }),
-      imagemin.optipng({optimizationLevel: 2}),
+      imagemin.optipng({ optimizationLevel: 2 }),
     ]))
     .pipe(dest('dist/img'))
 };

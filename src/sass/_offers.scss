@@ -138,6 +138,7 @@
   }
 
   &__swiper-button {
+    display: inline-block;
     padding: 16px 33px;
     outline: none;
     color: $primary;
