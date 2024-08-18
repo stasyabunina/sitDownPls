@@ -1,4 +1,4 @@
-import Filter from './filter';
+import Filter from './Filter';
 import Slider from './Slider';
 import SwiperElement from './SwiperElement';
 
