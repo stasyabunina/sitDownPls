@@ -1,6 +1,5 @@
 import FormValidator from './FormValidator';
 import LoadMoreHandler from './LoadMoreHandler';
-import SwiperElement from './SwiperElement';
 
 export default class HomeController {
   constructor(element) {
@@ -100,7 +99,7 @@ export default class HomeController {
       keyboard: true,
     };
 
-    new SwiperElement('.hero__swiper-container', options);
+    new Swiper('.hero__swiper-container', options);
   }
 
   offersSwiperInit() {
@@ -133,7 +132,7 @@ export default class HomeController {
       }
     };
 
-    new SwiperElement('.offers__swiper-container', options);
+    new Swiper('.offers__swiper-container', options);
   }
 
   usefulSwiperInit() {
@@ -165,7 +164,7 @@ export default class HomeController {
       }
     };
 
-    new SwiperElement('.useful__swiper-container', options);
+    new Swiper('.useful__swiper-container', options);
   }
 
   feedbackFormValidator() {

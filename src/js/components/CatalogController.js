@@ -1,6 +1,5 @@
 import Filter from './Filter';
 import Slider from './Slider';
-import SwiperElement from './SwiperElement';
 
 export default class CatalogController {
   constructor(element) {
@@ -79,6 +78,6 @@ export default class CatalogController {
       },
     };
 
-    new SwiperElement('.catalog__swiper-container', options);
+    new Swiper('.catalog__swiper-container', options);
   }
 }

@@ -27,9 +27,9 @@ export default class App {
     this.pathname = window.location.pathname;
     let controller;
 
-    if (this.pathname === config.catalogUrl) {
+    if (this.pathname.endsWith(config.catalogUrl)) {
       controller = new CatalogController(this.element);
-    } else if (this.pathname === config.productUrl) {
+    } else if (this.pathname.endsWith(config.productUrl)) {
       controller = new ProductController(this.element)
     } else {
       controller = new HomeController(this.element)

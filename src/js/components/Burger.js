@@ -14,7 +14,10 @@ export default class Burger {
 
   init() {
     this.bindToDOM();
+    this.addEventListeners();
+  }
 
+  addEventListeners() {
     this.element.addEventListener('click', () => {
       this.menu.classList.toggle('header-middle__nav-wrapper--active');
       document.body.classList.toggle('stop-scroll')

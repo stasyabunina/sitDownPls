@@ -1,6 +1,5 @@
 import BuyModal from './BuyModal';
 import PreviewModal from './PreviewModal';
-import SwiperElement from './SwiperElement';
 
 export default class ProductController {
   constructor(element) {
@@ -86,7 +85,7 @@ export default class ProductController {
       }
     };
 
-    new SwiperElement('.similar__swiper-container', options);
+    new Swiper('.similar__swiper-container', options);
   }
 
   previewSwiperInit() {
@@ -116,16 +115,16 @@ export default class ProductController {
       }
     };
 
-    const secondaryPreviewSwiperElement = new SwiperElement('.preview-secondary-slider', secondaryPreviewOptions);
+    const secondaryPreviewSwiperElement = new Swiper('.preview-secondary-slider', secondaryPreviewOptions);
 
     const primaryPreviewOptions = {
       spaceBetween: 78,
       thumbs: {
-        swiper: secondaryPreviewSwiperElement.swiper
+        swiper: secondaryPreviewSwiperElement
       }
     };
 
-    new SwiperElement('.preview-primary-slider', primaryPreviewOptions);
+    new Swiper('.preview-primary-slider', primaryPreviewOptions);
   }
 
   productSwiperInit() {
@@ -163,12 +162,12 @@ export default class ProductController {
       }
     };
 
-    const secondarySwiperElement = new SwiperElement('.secondary-slider', secondaryOptions);
+    const secondarySwiperElement = new Swiper('.secondary-slider', secondaryOptions);
 
     const primaryOptions = {
       spaceBetween: 38,
       thumbs: {
-        swiper: secondarySwiperElement.swiper
+        swiper: secondarySwiperElement
       },
       breakpoints: {
         963: {
@@ -183,6 +182,6 @@ export default class ProductController {
       }
     };
 
-    new SwiperElement('.primary-slider', primaryOptions);
+    new Swiper('.primary-slider', primaryOptions);
   }
 }
