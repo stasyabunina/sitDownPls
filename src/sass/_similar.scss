@@ -1,8 +1,8 @@
 .similar {
   &__title-pagination {
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__pagination {
@@ -10,8 +10,8 @@
   }
 
   &__buttons {
-    border: none;
     outline: none;
+    border: none;
     border-radius: 50%;
     background-color: transparent;
     transition: background-color .2s ease-in-out;
@@ -72,50 +72,50 @@
   }
 
   &__swiper-container {
-    width: 100%;
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
 
   &__slide {
     display: flex;
+    border-radius: $br;
     height: auto;
     background-color: $grayLight;
-    border-radius: $br;
   }
 
   &__card {
     position: relative;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    flex-grow: 1;
-    padding: 58px 15px 30px 15px;
+    padding: 58px 15px 30px;
   }
 
   &__top {
-    height: 100%;
-    width: 100%;
-    margin-bottom: $lesserGap;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: $lesserGap;
+    width: 100%;
+    height: 100%;
   }
 
   &__img-wrapper {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
+    justify-content: center;
   }
 
   &__card-content {
-    padding: 0 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 15px;
   }
 
   &__name-price {
@@ -125,11 +125,11 @@
   &__card-name {
     margin: 0;
     margin-bottom: 22px;
-    font-size: $titleFs;
     font-weight: 400;
+    font-size: $titleFs;
     line-height: 31px;
-    color: $black;
     word-break: break-all;
+    color: $black;
   }
 
   &__price {
@@ -140,38 +140,38 @@
   }
 
   &__card-btn {
-    padding: 17px 33px 15px 33px;
     outline: none;
-    color: $primary;
-    font-size: $biggerFs;
+    padding: 17px 33px 15px;
     font-weight: 600;
+    font-size: $biggerFs;
     line-height: $biggerLh;
+    color: $primary;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       color: $white;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
       color: $white;
+      background-color: $primaryShade;
     }
   }
 
   &__svg-number {
     position: absolute;
-    top: 30px;
     left: 30px;
+    top: 30px;
     align-items: center;
   }
 
   &__svg {
     display: flex;
+    margin-right: 7px;
     width: 16px;
     height: 15px;
-    margin-right: 7px;
   }
 
   &__number {
@@ -182,7 +182,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .similar {
     &__card-name {
       max-width: 236px;
@@ -190,12 +190,12 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .similar {
     &__pagination {
-      margin-bottom: 0;
       justify-content: center;
       order: 3;
+      margin-bottom: 0;
       width: 100%;
     }
 
@@ -205,7 +205,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .similar {
     &__swiper-container {
       margin-bottom: $lesserGap;
@@ -216,12 +216,12 @@
     }
 
     &__card {
-      padding: 38px 16px 16px 16px;
+      padding: 38px 16px 16px;
     }
 
     &__card-content {
-      width: 100%;
       padding: 0;
+      width: 100%;
     }
 
     &__name-price {
@@ -229,18 +229,18 @@
     }
 
     &__card-name {
-      max-width: 160px;
       margin-bottom: $lesserGap;
+      max-width: 160px;
       font-size: 16px;
       line-height: 21px;
       word-break: normal;
     }
 
     &__card-btn {
-      box-sizing: border-box;
       justify-content: center;
-      width: 100%;
       padding: 9px 23px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     &__img-wrapper {
@@ -252,14 +252,14 @@
     }
 
     &__svg-number {
-      top: 16px;
       left: 16px;
+      top: 16px;
     }
 
     &__svg {
+      margin-right: 6px;
       width: 13px;
       height: 12px;
-      margin-right: 6px;
     }
 
     &__number {
@@ -268,8 +268,8 @@
     }
 
     &__top {
-      margin-bottom: 5px;
       align-items: center;
+      margin-bottom: 5px;
     }
   }
 }

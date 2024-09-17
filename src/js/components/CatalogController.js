@@ -1,5 +1,5 @@
-import Filter from './Filter';
-import Slider from './Slider';
+import Filter from './Filter.js';
+import Slider from './Slider.js';
 
 export default class CatalogController {
   constructor(element) {
@@ -8,7 +8,7 @@ export default class CatalogController {
 
   bindToDOM() {
     this.filterSection = this.element.querySelector('.filter');
-    this.priceSlider = this.element.querySelector('.filter__price-slider');
+    this.priceSliderEl = this.element.querySelector('.filter__price-slider');
     this.inputHigher = this.element.querySelector('.filter__price-input_higher');
     this.inputLower = this.element.querySelector('.filter__price-input_lower');
   }
@@ -17,19 +17,19 @@ export default class CatalogController {
     this.bindToDOM();
 
     this.swiperInit();
-    new Slider(this.priceSlider, this.inputLower, this.inputHigher);
-    new Filter(this.filterSection);
+    this.priceSlider = new Slider(this.priceSliderEl, this.inputLower, this.inputHigher);
+    this.filter = new Filter(this.filterSection);
     this.timeline();
   }
 
   timeline() {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo('.catalog__swiper-container', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.catalog__swiper-container', {opacity: 0, y: 100}, {
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
   }
 
   swiperInit() {
@@ -64,20 +64,20 @@ export default class CatalogController {
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 16,
-        }
+        },
       },
       pagination: {
-        el: ".catalog__pagination",
+        el: '.catalog__pagination',
         clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + "</span>";
-        }
+        renderBullet(index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
       },
       a11y: {
         paginationBulletMessage: 'Перейти к следующей странице',
       },
     };
 
-    new Swiper('.catalog__swiper-container', options);
+    this.catalogSwiper = new Swiper('.catalog__swiper-container', options);
   }
 }

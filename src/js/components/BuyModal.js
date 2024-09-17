@@ -1,4 +1,4 @@
-import FormValidator from "./FormValidator";
+import FormValidator from './FormValidator.js';
 
 export default class BuyModal {
   constructor(productSection, element) {
@@ -29,13 +29,13 @@ export default class BuyModal {
       this.element.classList.toggle('buy--visible');
 
       this.wrapper.classList.toggle('buy__wrapper--visible');
-      document.body.classList.toggle('stop-scroll')
+      document.body.classList.toggle('stop-scroll');
     });
 
     this.closeModal.addEventListener('click', () => {
       this.element.classList.remove('buy--visible');
       this.wrapper.classList.remove('buy__wrapper--visible');
-      document.body.classList.remove('stop-scroll')
+      document.body.classList.remove('stop-scroll');
     });
   }
 
@@ -58,35 +58,35 @@ export default class BuyModal {
         {
           rule: 'minLength',
           value: 2,
-          errorMessage: "Поле должно содержать минимум :value символов",
+          errorMessage: 'Поле должно содержать минимум :value символов',
         },
         {
           rule: 'maxLength',
           value: 30,
-          errorMessage: "Поле должно содержать максимум :value символов",
+          errorMessage: 'Поле должно содержать максимум :value символов',
         },
         {
           rule: 'customRegexp',
           value: '^[a-zA-Zа-яА-Я -]+$',
-          errorMessage: "Недопустимый формат",
-        }]
+          errorMessage: 'Недопустимый формат',
+        }],
       },
       {
         id: '#tel', rules: [{
           rule: 'required',
-          errorMessage: "Вы не ввели телефон",
+          errorMessage: 'Вы не ввели телефон',
         },
         {
-          validator: (value) => (Number(this.phoneInput.inputmask.unmaskedvalue()) && this.phoneInput.inputmask.unmaskedvalue().length === 10),
-          errorMessage: "Пожалуйста, введите действительный номер телефона",
-        }]
+          validator: () => (Number(this.phoneInput.inputmask.unmaskedvalue()) && this.phoneInput.inputmask.unmaskedvalue().length === 10),
+          errorMessage: 'Пожалуйста, введите действительный номер телефона',
+        }],
       },
       {
         id: '#agree', rules: [{
-          rule: "required",
-          errorMessage: "Обязательное согласие",
-        }]
-      },
+          rule: 'required',
+          errorMessage: 'Обязательное согласие',
+        }],
+      }
     ];
 
     const onSuccess = () => {
@@ -94,6 +94,6 @@ export default class BuyModal {
       this.success.classList.add('buy__success--visible');
     };
 
-    new FormValidator(this.form, this.phoneInput, options, fields, onSuccess)
+    this.validator = new FormValidator(this.form, this.phoneInput, options, fields, onSuccess);
   }
 }

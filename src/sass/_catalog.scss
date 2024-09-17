@@ -4,9 +4,9 @@
 
 .catalog {
   &__aside {
-    max-width: 296px;
-    margin-right: $gap;
     flex-shrink: 0;
+    margin-right: $gap;
+    max-width: 296px;
   }
 
   &__title_mobile {
@@ -25,16 +25,16 @@
   }
 
   &__swiper-container {
-    width: 100%;
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
 
   &__swiper-wrapper {
-    margin-bottom: $gap;
     display: flex;
-    align-items: stretch;
     flex-direction: row;
+    align-items: stretch;
+    margin-bottom: $gap;
   }
 
   &__pagination {
@@ -44,80 +44,79 @@
 
     .swiper-pagination-bullet {
       margin: 0 $lesserGap;
+      outline: none;
+      border: 2px solid $primary;
+      border-radius: $br;
       padding: 7px 9px 6px 10px;
       min-width: 32px;
       min-height: 32px;
       font-weight: 600;
-      border-radius: $br;
-      background-color: $white;
-      outline: none;
-      color: $primary;
       font-size: $biggerFs;
       line-height: 16px;
-      font-weight: 600;
+      color: $primary;
+      background-color: $white;
       opacity: 1;
-      border: 2px solid $primary;
       transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
 
       &-active {
-        background-color: $primaryShade;
         border-color: $primaryShade;
         color: $white;
+        background-color: $primaryShade;
       }
 
       &:focus-visible {
-        background-color: $primaryLight;
         color: $white;
+        background-color: $primaryLight;
       }
 
       &:active {
-        background-color: $primaryShade;
         border-color: $primaryShade;
         color: $white;
+        background-color: $primaryShade;
       }
     }
   }
 
   &__slide {
-    height: auto;
     display: flex;
-    background-color: $grayLight;
     border-radius: $br;
+    height: auto;
+    background-color: $grayLight;
   }
 
   &__card {
     position: relative;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    flex-grow: 1;
-    padding: 51px 17px 30px 17px;
+    padding: 51px 17px 30px;
   }
 
   &__top {
-    min-height: 140px;
-    height: 100%;
-    width: 100%;
-    margin-bottom: $lesserGap;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: $lesserGap;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
   }
 
   &__img-wrapper {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
+    justify-content: center;
   }
 
   &__card-content {
-    padding: 0 13px 0 13px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 13px;
   }
 
   &__name-price {
@@ -127,11 +126,11 @@
   &__card-name {
     margin: 0;
     margin-bottom: 22px;
-    font-size: $titleFs;
     font-weight: 400;
+    font-size: $titleFs;
     line-height: 31px;
-    color: $black;
     word-break: break-all;
+    color: $black;
   }
 
   &__price {
@@ -142,38 +141,38 @@
   }
 
   &__card-btn {
-    padding: 16px 33px;
     outline: none;
-    color: $primary;
-    font-size: $biggerFs;
+    padding: 16px 33px;
     font-weight: 600;
+    font-size: $biggerFs;
     line-height: $biggerLh;
+    color: $primary;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       color: $white;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
       color: $white;
+      background-color: $primaryShade;
     }
   }
 
   &__svg-rating {
     position: absolute;
-    top: 30px;
     left: 30px;
+    top: 30px;
     align-items: center;
   }
 
   &__svg {
     display: flex;
+    margin-right: 7px;
     width: 16px;
     height: 15px;
-    margin-right: 7px;
   }
 
   &__rating {
@@ -188,10 +187,10 @@
   &__title {
     margin: 0;
     margin-bottom: 20px;
-    color: $black;
-    font-size: 18px;
     font-weight: 400;
+    font-size: 18px;
     line-height: 23px;
+    color: $black;
   }
 
   &__item:not(:last-child) {
@@ -224,9 +223,9 @@
   }
 
   &__price {
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   &__price-label {
@@ -234,16 +233,16 @@
   }
 
   &__price-input {
-    max-width: 86px;
-    min-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: none;
     border: 1px solid $gray;
-    color: $grayShade;
+    border-radius: 2px;
+    min-height: 30px;
+    max-width: 86px;
     font-size: $biggerFs;
     line-height: 21px;
-    border-radius: 2px;
-    vertical-align: middle;
-    display: inline-block;
-    outline: none;
+    color: $grayShade;
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
 
     &:focus-visible {
@@ -258,19 +257,19 @@
   }
 
   &__price-span {
+    display: inline-block;
+    vertical-align: middle;
     margin-right: 9px;
     font-size: $biggerFs;
     line-height: 26px;
     color: $grayShade;
-    vertical-align: middle;
-    display: inline-block;
   }
 
   &__price-slider {
     position: relative;
+    border-radius: 3px;
     width: 100%;
     height: 3px;
-    border-radius: 3px;
     background-color: $grayMd;
 
     &:focus-within .noUi-connect {
@@ -288,33 +287,33 @@
   }
 
   &__checkbox-text {
+    display: inline-block;
+    vertical-align: middle;
     font-size: $biggerFs;
     line-height: 21px;
     color: $grayShade;
-    display: inline-block;
-    vertical-align: middle;
   }
 
   &__visible-checkbox {
     position: relative;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    vertical-align: middle;
+    margin-right: 9px;
     border: 1px solid $gray;
     border-radius: 2px;
-    margin-right: 9px;
-    vertical-align: middle;
+    width: 20px;
+    height: 20px;
     transition: background-color .2s ease-in-out;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 50%;
+      top: 50%;
+      border-bottom: 2px solid $white;
+      border-left: 2px solid $white;
       width: 12px;
       height: 7px;
-      border-left: 2px solid $white;
-      border-bottom: 2px solid $white;
       opacity: 0;
       transform: translate(-45%, -65%) rotate(-45deg);
       transition: opacity .2s ease-in-out;
@@ -331,28 +330,28 @@
   }
 
   .filter__checkbox-input:checked~.filter__visible-checkbox {
-    background-color: $primary;
     border-color: $primary;
+    background-color: $primary;
   }
 
   &__card {
+    border-radius: $br;
+    padding: 220px 67px 30px 30px;
     width: 100%;
     min-height: 360px;
-    padding: 220px 67px 30px 30px;
-    background-color: $black;
-    background-image: url("img/filter.jpg");
-    background-repeat: no-repeat;
+    background-image: url("img/filter.webp");
     background-position: center top;
-    border-radius: $br;
+    background-repeat: no-repeat;
+    background-color: $black;
   }
 
   &__card-title {
     margin: 0;
     margin-bottom: 12px;
-    color: $gray;
     font-weight: 400;
     font-size: $biggerFs;
     line-height: 22px;
+    color: $gray;
   }
 
   &__card-span {
@@ -382,8 +381,8 @@
     }
 
     &:active .filter__link-span::after {
-      transform: scaleX(1);
       background-color: $primaryShade;
+      transform: scaleX(1);
     }
 
     &:focus-visible .filter__link-svg path {
@@ -407,18 +406,18 @@
     position: relative;
     display: block;
     margin-right: 5px;
-    color: $primary;
-    font-size: $biggerFs;
-    font-weight: 700;
-    line-height: 19px;
     outline: none;
+    font-weight: 700;
+    font-size: $biggerFs;
+    line-height: 19px;
+    color: $primary;
     transition: color .2s ease-in-out;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: -2px;
       left: 0;
+      bottom: -2px;
       width: 100%;
       height: 2px;
       background-color: $primary;
@@ -459,19 +458,19 @@
   position: absolute;
   right: -6px;
   top: 0;
-  height: 12px;
-  width: 12px;
+  outline: none;
   border: none;
   border-radius: 0;
-  background-color: transparent;
-  outline: none;
+  width: 12px;
+  height: 12px;
   box-shadow: none;
-  cursor: pointer;
+  background-image: url("img/slider.svg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-image: url("img/slider.svg");
+  background-color: transparent;
   transition: background-image .2s ease-in-out;
+  cursor: pointer;
 
   &::after {
     display: none;
@@ -490,17 +489,17 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .catalog {
     &__wrapper {
       flex-direction: column;
     }
 
     &__aside {
-      max-width: none;
       flex-shrink: 1;
       margin-right: 0;
       margin-bottom: $gap;
+      max-width: none;
     }
 
     &__title_mobile {
@@ -522,7 +521,7 @@
     }
 
     &__pagination {
-      & .swiper-pagination-bullet {
+      .swiper-pagination-bullet {
         padding: 6px 10px 7px 9px;
       }
     }
@@ -534,29 +533,26 @@
     }
 
     &__title_mobile {
-      margin-bottom: 0;
-      margin-right: 43px;
       display: block;
+      margin-right: 43px;
+      margin-bottom: 0;
       font-size: $defaultFs;
       line-height: 18px;
     }
 
     &__list {
       display: grid;
-      gap: $gap;
       grid-template-columns: repeat(12, 1fr);
       width: 100%;
+      gap: $gap;
     }
 
     &__price-slider {
       display: none;
     }
 
-    &__price {
-      margin-bottom: 0;
-    }
-
     &__price-input {
+      min-width: 60px;
       max-width: none;
     }
 
@@ -569,10 +565,10 @@
     }
 
     &__item {
-      grid-column: span 3;
       position: relative;
       display: flex;
       flex-grow: 1;
+      grid-column: span 3;
     }
 
     &__item:not(:last-child) {
@@ -617,18 +613,17 @@
     }
 
     &__sublist {
-      width: 100%;
-      display: none;
       position: absolute;
-      padding: 18px 0 13px;
       top: 30px;
-      background-color: $white;
-      z-index: 20;
-      border-bottom-left-radius: $br;
-      border-bottom-right-radius: $br;
+      z-index: 10;
+      display: none;
       border: 2px $grayLight solid;
       border-top: none;
-      z-index: 10;
+      border-bottom-right-radius: $br;
+      border-bottom-left-radius: $br;
+      padding: 18px 0 13px;
+      width: 100%;
+      background-color: $white;
     }
 
     &__sublist--active {
@@ -642,10 +637,6 @@
 
     &__price-span {
       transition: color .2s ease-in-out;
-    }
-
-    &__price-input {
-      min-width: 60px;
     }
 
     &__checkbox-text {
@@ -662,19 +653,19 @@
     }
 
     &__btn {
-      min-height: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 5px 14px;
-      border: 2px solid $grayLight;
-      background-color: $grayLight;
-      border-radius: $br;
-      flex-grow: 1;
-      flex-shrink: 1;
-      outline: none;
       position: relative;
       z-index: 10;
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-items: center;
+      justify-content: space-between;
+      outline: none;
+      border: 2px solid $grayLight;
+      border-radius: $br;
+      padding: 5px 14px;
+      min-height: 40px;
+      background-color: $grayLight;
       transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
 
       &:focus-visible {
@@ -691,25 +682,26 @@
     }
 
     &__btn-span {
-      color: $black;
-      line-height: 22px;
       font-size: $biggerFs;
+      line-height: 22px;
+      color: $black;
     }
 
     &__btn-svg {
       width: 12px;
       height: 12px;
-      min-height: 12px;
       min-width: 12px;
+      min-height: 12px;
     }
 
     &__price {
       flex-direction: column;
+      margin-bottom: 0;
     }
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .catalog {
     &__title_mobile {
       display: block;
@@ -728,9 +720,8 @@
     }
 
     &__list {
-      column-gap: $gap;
-      row-gap: $lesserGap;
       width: 65%;
+      gap: $lesserGap $gap;
     }
 
     &__item {
@@ -739,7 +730,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .catalog {
     &__card {
       box-sizing: border-box;
@@ -757,15 +748,15 @@
     }
 
     &__top {
-      min-height: 110px;
       height: auto;
+      min-height: 110px;
     }
 
     &__name-price {
-      justify-content: space-between;
       display: flex;
-      flex-direction: column;
       flex-grow: 1;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -776,7 +767,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .catalog-main {
     padding-top: 30px;
   }
@@ -791,20 +782,20 @@
     }
 
     &__card {
-      padding: 38px 16px 16px 16px;
+      padding: 38px 16px 16px;
     }
 
     &__card-name {
-      max-width: 170px;
       margin-bottom: $lesserGap;
+      max-width: 170px;
       font-size: 16px;
       line-height: 21px;
     }
 
     &__card-btn {
       justify-content: center;
-      width: 100%;
       padding: 10px 23px;
+      width: 100%;
     }
 
     &__img-wrapper {
@@ -816,14 +807,14 @@
     }
 
     &__svg-rating {
-      top: 16px;
       left: 16px;
+      top: 16px;
     }
 
     &__svg {
+      margin-right: 6px;
       width: 13px;
       height: 12px;
-      margin-right: 6px;
     }
 
     &__rating {
@@ -832,10 +823,10 @@
     }
 
     &__top {
-      min-height: 65px;
-      height: 100%;
-      margin-bottom: 2px;
       align-items: center;
+      margin-bottom: 2px;
+      height: 100%;
+      min-height: 65px;
     }
   }
 
@@ -853,9 +844,9 @@
     }
 
     &__visible-checkbox {
+      margin-right: 5px;
       width: 17px;
       height: 17px;
-      margin-right: 5px;
     }
 
     &__checkbox-text {

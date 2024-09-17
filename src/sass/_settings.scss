@@ -1,0 +1,96 @@
+@mixin box {
+  position: absolute;
+  inset: 0;
+}
+
+@mixin grid {
+  display: grid;
+  gap: $gap;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+:root {
+  --swiper-pagination-color: #333;
+  --swiper-pagination-bullet-inactive-color: #333;
+  --swiper-pagination-bullet-width: 14px;
+  --swiper-pagination-bullet-height: 14px;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+  --swiper-pagination-bullet-inactive-opacity: .3;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: "OpenSans", sans-serif;
+  font-weight: 400;
+  font-size: $defaultFs;
+  line-height: 1;
+  background-color: $white;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 36px;
+  max-width: $containerMaxWidth;
+}
+
+.btn {
+  border: 2px $primary solid;
+  border-radius: $br;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.grid {
+  @include grid;
+}
+
+.flex {
+  @include flex;
+}
+
+.section {
+  margin-bottom: 70px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 26px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    color: $black;
+  }
+}
+
+.main {
+  padding-top: $gap;
+}

@@ -1,5 +1,5 @@
-import BuyModal from './BuyModal';
-import PreviewModal from './PreviewModal';
+import BuyModal from './BuyModal.js';
+import PreviewModal from './PreviewModal.js';
 
 export default class ProductController {
   constructor(element) {
@@ -8,43 +8,43 @@ export default class ProductController {
 
   bindToDOM() {
     this.productSection = this.element.querySelector('.product');
-    this.buyModal = this.element.querySelector('.buy');
-    this.previewModal = this.element.querySelector('.preview');
+    this.buyModalEl = this.element.querySelector('.buy');
+    this.previewModalEl = this.element.querySelector('.preview');
   }
 
   init() {
     this.bindToDOM();
 
     this.swiperInit();
-    new PreviewModal(this.productSection, this.previewModal);
-    new BuyModal(this.productSection, this.buyModal);
+    this.previewModal = new PreviewModal(this.productSection, this.previewModalEl);
+    this.buyModal = new BuyModal(this.productSection, this.buyModalEl);
     this.timeline();
   }
 
   timeline() {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo('.product__desc', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.product__desc', {opacity: 0, y: 100}, {
       duration: 0.7,
       opacity: 1,
-      y: 0
+      y: 0,
     });
 
-    gsap.fromTo('.product__details', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.product__details', {opacity: 0, y: 100}, {
       duration: 0.7,
       opacity: 1,
-      y: 0
+      y: 0,
     });
 
-    gsap.fromTo('.similar__swiper-container', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.similar__swiper-container', {opacity: 0, y: 100}, {
       scrollTrigger: {
         trigger: '.similar__swiper-container',
         start: 'top 90%',
       },
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
   }
 
   swiperInit() {
@@ -81,11 +81,11 @@ export default class ProductController {
         320: {
           slidesPerView: 2,
           spaceBetween: 16,
-        }
-      }
+        },
+      },
     };
 
-    new Swiper('.similar__swiper-container', options);
+    this.similarSwiper = new Swiper('.similar__swiper-container', options);
   }
 
   previewSwiperInit() {
@@ -96,8 +96,8 @@ export default class ProductController {
       watchSlidesProgress: true,
       centeredSlides: false,
       navigation: {
-        nextEl: ".preview__button-next",
-        prevEl: ".preview__button-prev",
+        nextEl: '.preview__button-next',
+        prevEl: '.preview__button-prev',
       },
       a11y: {
         prevSlideMessage: 'К предыдущему слайду',
@@ -111,20 +111,20 @@ export default class ProductController {
         320: {
           slidesPerView: 1,
           centeredSlides: true,
-        }
-      }
+        },
+      },
     };
 
-    const secondaryPreviewSwiperElement = new Swiper('.preview-secondary-slider', secondaryPreviewOptions);
+    this.previewSecondarySwiper = new Swiper('.preview-secondary-slider', secondaryPreviewOptions);
 
     const primaryPreviewOptions = {
       spaceBetween: 78,
       thumbs: {
-        swiper: secondaryPreviewSwiperElement
-      }
+        swiper: this.previewSecondarySwiper,
+      },
     };
 
-    new Swiper('.preview-primary-slider', primaryPreviewOptions);
+    this.previewPrimarySwiper = new Swiper('.preview-primary-slider', primaryPreviewOptions);
   }
 
   productSwiperInit() {
@@ -158,16 +158,16 @@ export default class ProductController {
           slidesPerView: 'auto',
           direction: 'horizontal',
           spaceBetween: 38,
-        }
-      }
+        },
+      },
     };
 
-    const secondarySwiperElement = new Swiper('.secondary-slider', secondaryOptions);
+    this.secondarySwiper = new Swiper('.secondary-slider', secondaryOptions);
 
     const primaryOptions = {
       spaceBetween: 38,
       thumbs: {
-        swiper: secondarySwiperElement
+        swiper: this.secondarySwiper,
       },
       breakpoints: {
         963: {
@@ -178,10 +178,10 @@ export default class ProductController {
         },
         320: {
           spaceBetween: 38,
-        }
-      }
+        },
+      },
     };
 
-    new Swiper('.primary-slider', primaryOptions);
+    this.primarySwiper = new Swiper('.primary-slider', primaryOptions);
   }
 }

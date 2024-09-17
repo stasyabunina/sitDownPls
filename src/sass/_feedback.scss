@@ -1,11 +1,15 @@
 .feedback {
   &__form-wrapper {
-    width: 50%;
     margin-right: $gap;
+    width: 50%;
   }
 
   &__img {
     width: 50%;
+    background-image: url("img/feedback.webp");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &__title {
@@ -17,26 +21,26 @@
   }
 
   &__text {
+    display: inline;
+    vertical-align: middle;
     margin: 0;
     margin-right: 3px;
-    display: inline;
-    color: $grayShade;
     line-height: 19px;
-    vertical-align: middle;
+    color: $grayShade;
   }
 
   &__tooltip {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
     display: inline-block;
     vertical-align: middle;
     outline: none;
-    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-image: url("img/tooltip.svg");
     background-position: center;
     background-size: contain;
-    background-image: url("img/tooltip.svg");
+    background-repeat: no-repeat;
     transition: background-image .2s ease-in-out;
+    cursor: pointer;
 
     &:focus-visible {
       background-image: url("img/tooltip-hover.svg");
@@ -49,22 +53,22 @@
   }
 
   &__label {
-    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: 30px;
+    width: 100%;
   }
 
   &__input {
-    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: $br;
     padding: 7px 18px;
+    width: 100%;
     font-size: $biggerFs;
     line-height: 40px;
     color: $black;
     background-color: $grayLight;
-    outline: none;
-    border: none;
-    border-radius: $br;
     transition: background-color .2s ease-in-out, outline .2s ease-in-out;
 
     &::placeholder {
@@ -88,30 +92,30 @@
   }
 
   &__btn {
-    padding: 17px 33px;
     margin-bottom: 12px;
-    background-color: $primary;
-    color: $white;
-    font-size: $biggerFs;
-    font-weight: 600;
-    line-height: $biggerLh;
     outline: none;
+    padding: 17px 33px;
+    font-weight: 600;
+    font-size: $biggerFs;
+    line-height: $biggerLh;
+    color: $white;
+    background-color: $primary;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       border-color: $primaryShade;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
+      background-color: $primaryShade;
     }
 
     &:disabled {
+      border-color: $grayMd;
       color: $gray;
       background-color: $grayMd;
-      border-color: $grayMd;
     }
   }
 
@@ -122,41 +126,41 @@
 
   &__checkbox-text {
     display: inline-block;
-    color: $black;
-    line-height: 19px;
     vertical-align: middle;
+    line-height: 19px;
+    color: $black;
   }
 
   &__link {
-    color: $primary;
     text-decoration: underline;
+    color: $primary;
 
     &:focus-visible {
-      outline-offset: 1px;
       outline: 2px $primary solid;
+      outline-offset: 1px;
     }
   }
 
   &__visible-checkbox {
     position: relative;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
     border: 1px solid $gray;
     border-radius: 2px;
-    margin-right: 5px;
-    vertical-align: middle;
+    width: 14px;
+    height: 14px;
     transition: background-color .2s ease-in-out;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 50%;
+      top: 50%;
+      border-bottom: 2px solid $white;
+      border-left: 2px solid $white;
       width: 8px;
       height: 5px;
-      border-left: 2px solid $white;
-      border-bottom: 2px solid $white;
       opacity: 0;
       transform: translate(-45%, -65%) rotate(-45deg);
       transition: opacity .2s ease-in-out;
@@ -174,28 +178,20 @@
     }
 
     &:checked~.feedback__visible-checkbox {
-      background-color: $primary;
       border-color: $primary;
+      background-color: $primary;
     }
-  }
-
-  &__img {
-    width: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("img/feedback.jpg");
   }
 }
 
 .tippy-box[data-theme~='gray'] {
-  padding: 5px;
-  background-color: $black;
-  color: $white;
-  font-size: 9px;
-  font-weight: 400;
-  line-height: 14px;
   border-radius: 0;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+  color: $white;
+  background-color: $black;
 }
 
 .tippy-box[data-theme~='gray'][data-placement^='top']>.tippy-arrow::before {
@@ -203,10 +199,10 @@
 }
 
 .is-label-invalid {
-  padding-left: 18px;
   margin-bottom: 2px;
-  font-size: 12px;
+  padding-left: 18px;
   font-weight: 400;
+  font-size: 12px;
   line-height: $biggerLh;
 }
 
@@ -214,7 +210,7 @@
   padding-left: 0;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .feedback {
     &__form-wrapper {
       width: 40%;
@@ -222,14 +218,14 @@
 
     &__img {
       width: 60%;
+      background-image: url("img/feedback-1024.webp");
       background-position: right center;
       background-size: 93% auto;
-      background-image: url("img/feedback-1024.jpg");
     }
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .feedback {
     &__form-wrapper {
       width: 60%;
@@ -237,18 +233,18 @@
 
     &__img {
       width: 40%;
+      background-image: url("img/feedback-768.webp");
       background-position: right center;
       background-size: auto 94%;
-      background-image: url("img/feedback-768.jpg");
     }
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .feedback {
     &__form-wrapper {
-      width: 100%;
       margin-right: 0;
+      width: 100%;
     }
 
     &__img {
@@ -257,7 +253,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .feedback {
     &__checkbox-text {
       font-size: 12px;

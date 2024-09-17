@@ -2,7 +2,7 @@ export default class Filter {
   constructor(element) {
     this.element = element;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
@@ -18,38 +18,38 @@ export default class Filter {
   }
 
   addEventListeners() {
-    this.btns.forEach(item => {
+    this.btns.forEach((item) => {
       item.addEventListener('click', () => {
         let dropdown = item.parentElement.querySelector('.filter__sublist');
 
-        this.sublist.forEach(el => {
-          if (el != dropdown) {
+        this.sublist.forEach((el) => {
+          if (el !== dropdown) {
             el.classList.remove('filter__sublist--active');
           }
-        })
+        });
 
         dropdown.classList.toggle('filter__sublist--active');
 
-        this.svgs.forEach(el => {
+        this.svgs.forEach((el) => {
           el.classList.toggle('filter__btn-svg--reversed');
 
-          if (el != item.querySelector('.filter__btn-svg')) {
-            el.classList.remove('filter__btn-svg--reversed')
+          if (el !== item.querySelector('.filter__btn-svg')) {
+            el.classList.remove('filter__btn-svg--reversed');
           }
-        })
-      })
+        });
+      });
     });
 
     document.addEventListener('click', (e) => {
       let target = e.target;
       if (!target.closest('.filter__list')) {
-        this.sublist.forEach(el => {
+        this.sublist.forEach((el) => {
           el.classList.remove('filter__sublist--active');
         });
 
-        this.svgs.forEach(el => {
-          el.classList.remove('filter__btn-svg--reversed')
-        })
+        this.svgs.forEach((el) => {
+          el.classList.remove('filter__btn-svg--reversed');
+        });
       }
     });
   }

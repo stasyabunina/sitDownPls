@@ -22,20 +22,20 @@ export default class PreviewModal {
       el.addEventListener('click', () => {
         this.element.classList.toggle('preview--visible');
         this.wrapper.classList.toggle('preview__wrapper--visible');
-        document.body.classList.toggle('stop-scroll')
-      })
+        document.body.classList.toggle('stop-scroll');
+      });
     });
 
     this.closeModal.addEventListener('click', () => {
       this.element.classList.remove('preview--visible');
       this.wrapper.classList.remove('preview__wrapper--visible');
-      document.body.classList.remove('stop-scroll')
-    })
+      document.body.classList.remove('stop-scroll');
+    });
 
     this.sliders.forEach((slider) => {
       slider.addEventListener('click', () => {
-        this.element.focus()
-      })
+        this.element.focus();
+      });
     });
   }
 }

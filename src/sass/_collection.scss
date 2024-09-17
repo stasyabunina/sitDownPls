@@ -1,24 +1,24 @@
 .collection {
   &__wrapper {
-    background-repeat: no-repeat;
-    background-color: $black;
+    background-image: url("img/collection.webp");
     background-position: center;
     background-size: cover;
-    background-image: url("img/collection.jpg");
+    background-repeat: no-repeat;
+    background-color: $black;
   }
 
   &__content {
-    padding: 161px 0 150px 0;
+    padding: 161px 0 150px;
   }
 
   &__title {
-    max-width: 508px;
     margin: 0;
     margin-bottom: 49px;
-    color: $white;
+    max-width: 508px;
     font-weight: 400;
     font-size: 48px;
     line-height: 57.6px;
+    color: $white;
   }
 
   &__span {
@@ -32,29 +32,29 @@
 
   &__btn {
     display: inline-block;
+    outline: none;
     padding: 20px 29.5px;
     font-weight: 700;
     font-size: $biggerFs;
     line-height: $biggerLh;
     color: $white;
     background-color: $primary;
-    outline: none;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       border-color: $primaryShade;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
+      background-color: $primaryShade;
     }
 
     &:disabled {
+      border-color: $grayMd;
       color: $gray;
       background-color: $grayMd;
-      border-color: $grayMd;
     }
   }
 
@@ -63,18 +63,18 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .collection {
     &__wrapper {
-      background-image: url("img/collection-1024.jpg");
+      background-image: url("img/collection-1024.webp");
     }
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .collection {
     &__wrapper {
-      background-image: url("img/collection-768.jpg");
+      background-image: url("img/collection-768.webp");
     }
 
     &__container {
@@ -83,11 +83,11 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .collection {
     &__wrapper {
       margin-bottom: 32px;
-      background-image: url("img/collection-320.jpg");
+      background-image: url("img/collection-320.webp");
     }
 
     &__container {
@@ -99,12 +99,12 @@
     }
 
     &__content {
-      padding: 36px 0 110px 0;
+      padding: 36px 0 110px;
     }
 
     &__title {
-      max-width: 230px;
       margin-bottom: 0;
+      max-width: 230px;
       font-size: $biggerFs;
       line-height: 22px;
     }
@@ -125,8 +125,8 @@
     }
 
     &__btn_mobile {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
   }
 }

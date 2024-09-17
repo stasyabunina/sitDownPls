@@ -13,10 +13,10 @@
 }
 
   &__link {
-    color: $gray;
-    line-height: $defaultLh;
-    transition: color .2s ease-in-out, background-color .2s ease-in-out;
     outline: none;
+    line-height: $defaultLh;
+    color: $gray;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out;
 
     &:focus-visible {
       color: $primaryShade;

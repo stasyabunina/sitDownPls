@@ -1,19 +1,18 @@
-import Burger from './Burger';
-import CatalogController from './CatalogController';
-import config from './config';
-import HomeController from './HomeController';
-import ProductController from './ProductController';
+import Burger from './Burger.js';
+import CatalogController from './CatalogController.js';
+import config from './config.js';
+import HomeController from './HomeController.js';
+import ProductController from './ProductController.js';
 
 export default class App {
   constructor(element) {
     this.element = element;
-    this.pathname = undefined;
   }
 
   bindToDOM() {
     this.cityDropdown = this.element.querySelector('.header-top__select');
     this.categoryDropdown = this.element.querySelector('.header-bottom__select');
-    this.burger = this.element.querySelector('.burger');
+    this.burgerEl = this.element.querySelector('.burger');
     this.burgerMenu = this.element.querySelector('.header-middle__nav-wrapper');
   }
 
@@ -22,7 +21,7 @@ export default class App {
 
     this.lazyload();
     this.choicesInit();
-    new Burger(this.burger, this.burgerMenu);
+    this.burger = new Burger(this.burgerEl, this.burgerMenu);
 
     this.pathname = window.location.pathname;
     let controller;
@@ -30,9 +29,9 @@ export default class App {
     if (this.pathname.endsWith(config.catalogUrl)) {
       controller = new CatalogController(this.element);
     } else if (this.pathname.endsWith(config.productUrl)) {
-      controller = new ProductController(this.element)
+      controller = new ProductController(this.element);
     } else {
-      controller = new HomeController(this.element)
+      controller = new HomeController(this.element);
     }
 
     controller.init();
@@ -45,13 +44,13 @@ export default class App {
   }
 
   choicesInit() {
-    new Choices(this.cityDropdown, {
+    this.cityDropdownChoices = new Choices(this.cityDropdown, {
       searchEnabled: false,
       itemSelectText: '',
       allowHTML: true,
     });
 
-    new Choices(this.categoryDropdown, {
+    this.categoryDropdownChoices = new Choices(this.categoryDropdown, {
       searchEnabled: false,
       itemSelectText: '',
       placeholder: true,

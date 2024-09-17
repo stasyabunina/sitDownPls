@@ -5,7 +5,7 @@ export default class Slider {
     this.inputHigher = inputHigher;
     this.inputs = [this.inputLower, this.inputHigher];
 
-    this.init(this.element, this.inputs)
+    this.init(this.element, this.inputs);
   }
 
   init(element, inputs) {
@@ -19,9 +19,9 @@ export default class Slider {
       },
       format: {
         to: (v) => parseFloat(v).toFixed(0),
-        from: (v) => parseFloat(v).toFixed(0)
-      }
-    })
+        from: (v) => parseFloat(v).toFixed(0),
+      },
+    });
 
     element.noUiSlider.on('update', function (values, handle) {
       inputs[handle].value = values[handle];
@@ -33,11 +33,11 @@ export default class Slider {
       });
 
       input.addEventListener('keydown', (e) => {
-        var values = element.noUiSlider.get();
-        var value = Number(values[handle]);
-        var steps = element.noUiSlider.steps();
-        var step = steps[handle];
-        var position;
+        let values = element.noUiSlider.get();
+        let value = Number(values[handle]);
+        let steps = element.noUiSlider.steps();
+        let step = steps[handle];
+        let position;
         switch (e.which) {
           case 13:
             element.noUiSlider.setHandle(handle, this.value);

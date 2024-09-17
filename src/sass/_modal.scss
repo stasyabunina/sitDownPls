@@ -1,27 +1,24 @@
 .modal {
   position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  z-index: 200;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
   transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
-  z-index: 200;
 
   &__close-btn {
     position: absolute;
-    top: 20px;
     right: 20px;
+    top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 0;
     width: 20px;
     height: 20px;
-    border: none;
-    outline: none;
-    border-radius: 0;
     transition: background-color .2s ease-in-out;
 
     &:focus-visible .modal__close-svg path {
@@ -49,29 +46,29 @@
 
 .buy {
   &__wrapper {
+    position: relative;
+    display: none;
+    border-radius: $br;
+    padding: 30px;
     width: 100%;
     max-width: 624px;
-    position: relative;
-    padding: 30px;
     background-color: $white;
-    border-radius: $br;
-    display: none;
   }
 
   &__success {
-    min-height: 361px;
     display: none;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
+    min-height: 361px;
   }
 
   &__svg {
+    display: flex;
+    margin-bottom: 32px;
     width: 172px;
     height: 117px;
-    margin-bottom: 32px;
-    display: flex;
   }
 
   &__success-text {
@@ -89,10 +86,10 @@
   &__title {
     margin: 0;
     margin-bottom: 8px;
-    color: $black;
-    font-size: 32px;
     font-weight: 400;
+    font-size: 32px;
     line-height: 32px;
+    color: $black;
   }
 
   &__text {
@@ -104,27 +101,27 @@
 
   &__form {
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-start;
   }
 
   &__label {
-    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     margin-bottom: 30px;
+    width: 100%;
   }
 
   &__input {
-    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: $br;
     padding: 7px 18px;
+    width: 100%;
     font-size: $biggerFs;
     line-height: 40px;
     color: $black;
     background-color: $grayLight;
-    outline: none;
-    border: none;
-    border-radius: $br;
     transition: background-color .2s ease-in-out, outline .2s ease-in-out;
 
     &::placeholder {
@@ -148,30 +145,30 @@
   }
 
   &__btn {
-    padding: 17px 33px;
     margin-bottom: 12px;
-    background-color: $primary;
-    color: $white;
-    font-size: $biggerFs;
-    font-weight: 600;
-    line-height: $biggerLh;
     outline: none;
+    padding: 17px 33px;
+    font-weight: 600;
+    font-size: $biggerFs;
+    line-height: $biggerLh;
+    color: $white;
+    background-color: $primary;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       border-color: $primaryShade;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
+      background-color: $primaryShade;
     }
 
     &:disabled {
+      border-color: $grayMd;
       color: $gray;
       background-color: $grayMd;
-      border-color: $grayMd;
     }
   }
 
@@ -181,36 +178,36 @@
 
   &__checkbox-text {
     display: inline-block;
-    color: $black;
-    line-height: 19px;
     vertical-align: middle;
+    line-height: 19px;
+    color: $black;
   }
 
   &__link {
-    color: $primary;
     text-decoration: underline;
+    color: $primary;
   }
 
   &__visible-checkbox {
     position: relative;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
     border: 1px solid $gray;
     border-radius: 2px;
-    margin-right: 5px;
-    vertical-align: middle;
+    width: 14px;
+    height: 14px;
     transition: background-color .2s ease-in-out;
 
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 50%;
+      top: 50%;
+      border-bottom: 2px solid $white;
+      border-left: 2px solid $white;
       width: 8px;
       height: 5px;
-      border-left: 2px solid $white;
-      border-bottom: 2px solid $white;
       opacity: 0;
       transform: translate(-45%, -65%) rotate(-45deg);
       transition: opacity .2s ease-in-out;
@@ -228,8 +225,8 @@
     }
 
     &:checked~.buy__visible-checkbox {
-      background-color: $primary;
       border-color: $primary;
+      background-color: $primary;
     }
   }
 }
@@ -251,7 +248,7 @@
   display: flex;
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .buy {
     &__wrapper {
       max-width: 450px;
@@ -264,13 +261,13 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .modal {
     &__close-btn {
+      right: $lesserGap;
+      top: $lesserGap;
       width: 12px;
       height: 12px;
-      top: $lesserGap;
-      right: $lesserGap;
     }
 
     &__close-svg {
@@ -280,12 +277,12 @@
   }
 
   .buy {
-    padding-left: 12px;
     padding-right: 12px;
+    padding-left: 12px;
 
     &__wrapper {
+      padding: 30px 16px;
       max-width: none;
-      padding: 30px 16px 30px 16px;
     }
 
     &__form-wrapper {
@@ -297,16 +294,16 @@
     }
 
     &__svg {
+      margin-bottom: 14px;
       width: 73px;
       height: 50px;
-      margin-bottom: 14px;
     }
 
     &__success-text {
       max-width: 194px;
-      text-align: center;
       font-size: $biggerFs;
       line-height: $biggerLh;
+      text-align: center;
     }
 
     &__title {
@@ -323,8 +320,8 @@
     }
 
     &__checkbox-label {
-      width: 270px;
       display: block;
+      width: 270px;
     }
 
     &__checkbox-text {
@@ -352,18 +349,18 @@
 
   &__wrapper {
     position: relative;
+    display: none;
+    border-radius: $br;
     width: 100%;
     max-width: 1280px;
     background-color: $white;
-    border-radius: $br;
-    display: none;
   }
 
   &__secondary-slider-wrapper {
-    background-color: $grayLight;
-    border-bottom-left-radius: $br;
     border-bottom-right-radius: $br;
+    border-bottom-left-radius: $br;
     padding: 20px 51px;
+    background-color: $grayLight;
   }
 
   &__primary-slider-wrapper {
@@ -373,17 +370,17 @@
 
 .preview-primary-slider {
   &__slide {
-    height: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: auto;
     cursor: pointer;
   }
 
   &__img-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__img {
@@ -395,24 +392,24 @@
 
 .preview-secondary-slider {
   &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: auto;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
   }
 
   &__img-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__img {
-    max-height: 126px;
     display: block;
     height: auto;
+    max-height: 126px;
     object-fit: cover;
   }
 }
@@ -426,7 +423,7 @@
   display: block;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .preview {
     padding: 0 36px;
 
@@ -439,15 +436,15 @@
     }
 
     &__buttons {
-      display: flex;
       position: absolute;
       bottom: 67px;
-      border: none;
+      z-index: 210;
+      display: flex;
       outline: none;
+      border: none;
       border-radius: 50%;
       background-color: transparent;
       transition: background-color .2s ease-in-out;
-      z-index: 210;
 
       &:focus-visible .preview__btn-svg path {
         stroke: $white;
@@ -491,9 +488,9 @@
     }
 
     &__btn-svg {
+      border-radius: 100%;
       width: 32px;
       height: 32px;
-      border-radius: 100%;
       transition: background-color .2s ease-in-out;
 
       circle {
@@ -517,7 +514,7 @@
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .preview {
     padding: 0 72px;
 
@@ -537,7 +534,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .preview {
     padding: 0 12px;
 

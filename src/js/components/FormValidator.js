@@ -1,14 +1,12 @@
 export default class FormValidator {
-  constructor(form, phone, options, fields, onSuccess = undefined) {
+  constructor(form, phone, options, fields, onSuccess) {
     this.form = form;
     this.phone = phone;
     this.options = options;
     this.fields = fields;
     this.onSuccess = onSuccess;
 
-    this.validation = undefined;
-
-    this.init()
+    this.init();
   }
 
   init() {
@@ -29,11 +27,13 @@ export default class FormValidator {
 
   addFields() {
     for (const field of this.fields) {
-      this.validation.addField(field.id, field.rules)
+      this.validation.addField(field.id, field.rules);
     }
   }
 
   onSuccessHandler() {
-    this.onSuccess !== undefined && this.validation.onSuccess(() => this.onSuccess());
+    if (typeof this.onSuccess !== 'undefined') {
+      this.validation.onSuccess(() => this.onSuccess());
+    }
   }
 }

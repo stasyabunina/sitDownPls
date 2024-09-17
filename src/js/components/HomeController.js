@@ -1,5 +1,5 @@
-import FormValidator from './FormValidator';
-import LoadMoreHandler from './LoadMoreHandler';
+import FormValidator from './FormValidator.js';
+import LoadMoreHandler from './LoadMoreHandler.js';
 
 export default class HomeController {
   constructor(element) {
@@ -21,51 +21,51 @@ export default class HomeController {
     this.feedbackFormValidator();
     this.timeline();
 
-    new LoadMoreHandler(this.btnMore, this.ratingItems);
+    this.loader = new LoadMoreHandler(this.btnMore, this.ratingItems);
   }
 
   timeline() {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo('.offers__swiper-container', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.offers__swiper-container', {opacity: 0, y: 100}, {
       scrollTrigger: {
         trigger: '.offers__swiper-container',
         start: 'top 90%',
       },
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
 
-    gsap.fromTo('.rating__item', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.rating__item', {opacity: 0, y: 100}, {
       scrollTrigger: {
         trigger: '.rating__item',
         start: 'top 90%',
       },
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
 
-    gsap.fromTo('.top-category__item', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.top-category__item', {opacity: 0, y: 100}, {
       scrollTrigger: {
         trigger: '.top-category__item',
         start: 'top 90%',
       },
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
 
-    gsap.fromTo('.useful__swiper-container', { opacity: 0, y: 100 }, {
+    gsap.fromTo('.useful__swiper-container', {opacity: 0, y: 100}, {
       scrollTrigger: {
         trigger: '.useful__swiper-container',
         start: 'top 90%',
       },
       duration: 0.7,
       opacity: 1,
-      y: 0
-    })
+      y: 0,
+    });
   }
 
   tooltipHandler() {
@@ -99,12 +99,12 @@ export default class HomeController {
       keyboard: true,
     };
 
-    new Swiper('.hero__swiper-container', options);
+    this.heroSwiper = new Swiper('.hero__swiper-container', options);
   }
 
   offersSwiperInit() {
     const options = {
-      slidesPerView: "auto",
+      slidesPerView: 'auto',
       slidesPerGroup: 1,
       spaceBetween: 32,
       autoplay: false,
@@ -113,12 +113,12 @@ export default class HomeController {
         nextSlideMessage: 'К следующему слайду',
       },
       navigation: {
-        nextEl: ".offers__button-next",
-        prevEl: ".offers__button-prev",
+        nextEl: '.offers__button-next',
+        prevEl: '.offers__button-prev',
       },
       breakpoints: {
         1201: {
-          slidesPerView: "auto",
+          slidesPerView: 'auto',
         },
         963: {
           slidesPerView: 3,
@@ -128,11 +128,11 @@ export default class HomeController {
         },
         320: {
           slidesPerView: 1,
-        }
-      }
+        },
+      },
     };
 
-    new Swiper('.offers__swiper-container', options);
+    this.offersSwiper = new Swiper('.offers__swiper-container', options);
   }
 
   usefulSwiperInit() {
@@ -145,8 +145,8 @@ export default class HomeController {
         nextSlideMessage: 'К следующему слайду',
       },
       navigation: {
-        nextEl: ".useful__button-next",
-        prevEl: ".useful__button-prev",
+        nextEl: '.useful__button-next',
+        prevEl: '.useful__button-prev',
       },
       breakpoints: {
         1201: {
@@ -160,11 +160,11 @@ export default class HomeController {
         },
         320: {
           slidesPerView: 1,
-        }
-      }
+        },
+      },
     };
 
-    new Swiper('.useful__swiper-container', options);
+    this.usefulSwiper = new Swiper('.useful__swiper-container', options);
   }
 
   feedbackFormValidator() {
@@ -186,53 +186,53 @@ export default class HomeController {
         {
           rule: 'minLength',
           value: 2,
-          errorMessage: "Поле должно содержать минимум :value символов",
+          errorMessage: 'Поле должно содержать минимум :value символов',
         },
         {
           rule: 'maxLength',
           value: 30,
-          errorMessage: "Поле должно содержать максимум :value символов",
+          errorMessage: 'Поле должно содержать максимум :value символов',
         },
         {
           rule: 'customRegexp',
           value: '^[a-zA-Zа-яА-Я -]+$',
-          errorMessage: "Недопустимый формат",
-        }]
+          errorMessage: 'Недопустимый формат',
+        }],
       },
       {
         id: '#email', rules: [
           {
             rule: 'required',
-            errorMessage: "Вы не ввели e-mail",
+            errorMessage: 'Вы не ввели e-mail',
           },
           {
             rule: 'email',
-            errorMessage: "Недопустимый формат",
-          },
-        ]
+            errorMessage: 'Недопустимый формат',
+          }
+        ],
       },
       {
         id: '#tel', rules: [{
           rule: 'required',
-          errorMessage: "Вы не ввели телефон",
+          errorMessage: 'Вы не ввели телефон',
         },
         {
-          validator: (value) => (Number(this.phoneInput.inputmask.unmaskedvalue()) && this.phoneInput.inputmask.unmaskedvalue().length === 10),
-          errorMessage: "Пожалуйста, введите действительный номер телефона",
-        }]
+          validator: () => (Number(this.phoneInput.inputmask.unmaskedvalue()) && this.phoneInput.inputmask.unmaskedvalue().length === 10),
+          errorMessage: 'Пожалуйста, введите действительный номер телефона',
+        }],
       },
       {
         id: '#agree', rules: [{
-          rule: "required",
-          errorMessage: "Обязательное согласие",
-        }]
-      },
+          rule: 'required',
+          errorMessage: 'Обязательное согласие',
+        }],
+      }
     ];
 
     const onSuccess = () => {
       this.form.reset();
     };
 
-    new FormValidator(this.form, this.phoneInput, options, fields, onSuccess)
+    this.validator = new FormValidator(this.form, this.phoneInput, options, fields, onSuccess);
   }
 }

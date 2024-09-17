@@ -82,8 +82,8 @@
   .header-bottom {
     &__search {
       &:hover {
-        background-color: $grayMd;
         border-color: $grayMd;
+        background-color: $grayMd;
       }
     }
 
@@ -121,15 +121,15 @@
   .hero {
     &__swiper-button {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
 
     &__mobile-button {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -147,8 +147,8 @@
 
     &__swiper-button {
       &:hover {
-        background-color: $primary;
         color: $white;
+        background-color: $primary;
       }
     }
   }
@@ -156,15 +156,15 @@
   .rating {
     &__card-btn {
       &:hover {
-        background-color: $primary;
         color: $white;
+        background-color: $primary;
       }
     }
 
     &__btn {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -172,8 +172,8 @@
   .collection {
     &__btn {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -223,8 +223,8 @@
 
     &__btn {
       &:hover {
-        background-color: $primary;
         color: $white;
+        background-color: $primary;
       }
     }
   }
@@ -244,8 +244,8 @@
 
     &__btn {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -269,8 +269,8 @@
   .similar {
     &__card-btn {
       &:hover {
-        background-color: $primary;
         color: $white;
+        background-color: $primary;
       }
     }
 
@@ -288,8 +288,8 @@
   .product {
     &__buy-btn {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -311,8 +311,8 @@
 
     &__btn {
       &:hover {
-        background-color: $primaryLight;
         border-color: $primaryLight;
+        background-color: $primaryLight;
       }
     }
   }
@@ -320,11 +320,11 @@
   .preview {
     &__buttons {
       &:hover .preview__btn-svg path {
-        stroke: $white !important;
+        stroke: $white;
       }
 
       &:hover .preview__btn-svg circle {
-        stroke: $primary !important;
+        stroke: $primary;
       }
 
       &:hover .preview__btn-svg {
@@ -335,10 +335,10 @@
 
   .catalog {
     &__pagination {
-      & .swiper-pagination-bullet {
+      .swiper-pagination-bullet {
         &:hover {
-          background-color: $primary;
           color: $white;
+          background-color: $primary;
         }
 
         &-active {
@@ -351,8 +351,8 @@
 
     &__card-btn {
       &:hover {
-        background-color: $primary;
         color: $white;
+        background-color: $primary;
       }
     }
   }
@@ -385,7 +385,7 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     .filter {
       &__subitem {
         &:hover {

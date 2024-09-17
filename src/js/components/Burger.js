@@ -3,7 +3,7 @@ export default class Burger {
     this.element = element;
     this.menu = menu;
 
-    this.init()
+    this.init();
   }
 
   bindToDOM() {
@@ -20,26 +20,26 @@ export default class Burger {
   addEventListeners() {
     this.element.addEventListener('click', () => {
       this.menu.classList.toggle('header-middle__nav-wrapper--active');
-      document.body.classList.toggle('stop-scroll')
+      document.body.classList.toggle('stop-scroll');
     });
 
     this.burgerClose.addEventListener('click', () => {
       this.menu.classList.toggle('header-middle__nav-wrapper--active');
-      document.body.classList.toggle('stop-scroll')
+      document.body.classList.toggle('stop-scroll');
     });
 
     this.menuLinks.forEach((el) => {
       el.addEventListener('click', () => {
         this.menu.classList.remove('header-middle__nav-wrapper--active');
-        document.body.classList.remove('stop-scroll')
-      })
+        document.body.classList.remove('stop-scroll');
+      });
     });
 
     this.menuLinksTwo.forEach((el) => {
       el.addEventListener('click', () => {
         this.menu.classList.remove('header-middle__nav-wrapper--active');
-        document.body.classList.remove('stop-scroll')
-      })
+        document.body.classList.remove('stop-scroll');
+      });
     });
   }
 }

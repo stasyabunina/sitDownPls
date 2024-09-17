@@ -1,15 +1,15 @@
 .rating {
   &__list {
-    margin-bottom: $gap;
     grid-template-columns: repeat(12, 1fr);
+    margin-bottom: $gap;
   }
 
   &__item {
-    min-height: 420px;
-    grid-column-end: span 3;
-    background-color: $grayLight;
-    border-radius: $br;
     display: flex;
+    grid-column-end: span 3;
+    border-radius: $br;
+    min-height: 420px;
+    background-color: $grayLight;
   }
 
   &__item:nth-last-child(-n+4) {
@@ -23,35 +23,35 @@
   &__card {
     position: relative;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    flex-grow: 1;
-    padding: 61px 15px 30px 15px;
+    padding: 61px 15px 30px;
   }
 
   &__top {
-    height: 100%;
-    width: 100%;
-    margin-bottom: $lesserGap;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-bottom: $lesserGap;
+    width: 100%;
+    height: 100%;
   }
 
   &__img-wrapper {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
+    justify-content: center;
   }
 
   &__card-content {
-    padding: 0 15px 0 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 15px;
   }
 
   &__name-price {
@@ -61,11 +61,11 @@
   &__card-name {
     margin: 0;
     margin-bottom: 20px;
-    font-size: $titleFs;
     font-weight: 400;
+    font-size: $titleFs;
     line-height: 31px;
-    color: $black;
     word-break: break-all;
+    color: $black;
   }
 
   &__price {
@@ -76,38 +76,38 @@
   }
 
   &__card-btn {
-    padding: 17px 33px;
     outline: none;
-    color: $primary;
-    font-size: $biggerFs;
+    padding: 17px 33px;
     font-weight: 600;
+    font-size: $biggerFs;
     line-height: $biggerLh;
+    color: $primary;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       color: $white;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
       color: $white;
+      background-color: $primaryShade;
     }
   }
 
   &__svg-number {
     position: absolute;
-    top: 30px;
     left: 30px;
+    top: 30px;
     align-items: center;
   }
 
   &__svg {
     display: flex;
+    margin-right: 7px;
     width: 16px;
     height: 15px;
-    margin-right: 7px;
   }
 
   &__number {
@@ -118,30 +118,30 @@
   }
 
   &__btn {
-    padding: 19px 34.5px;
     margin: 0 auto;
-    font-size: $biggerFs;
+    outline: none;
+    padding: 19px 34.5px;
     font-weight: 700;
+    font-size: $biggerFs;
     line-height: $biggerLh;
     color: $white;
     background-color: $primary;
-    outline: none;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       border-color: $primaryShade;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
+      background-color: $primaryShade;
     }
 
     &:disabled {
+      border-color: $grayMd;
       color: $gray;
       background-color: $grayMd;
-      border-color: $grayMd;
     }
   }
 
@@ -150,7 +150,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .rating {
     &__list {
       grid-template-columns: repeat(12, 1fr);
@@ -170,7 +170,7 @@
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .rating {
     &__list {
       grid-template-columns: repeat(12, 1fr);
@@ -190,7 +190,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .rating {
     &__card-content {
       padding: 0;
@@ -198,7 +198,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .rating {
     &__list {
       grid-template-columns: repeat(6, 1fr);
@@ -206,16 +206,13 @@
     }
 
     &__item {
-      grid-column-end: auto;
       grid-column: span 3;
-    }
-
-    &__item {
+      grid-column-end: auto;
       min-height: 278px;
     }
 
     &__card {
-      padding: 37px 15px 15px 15px;
+      padding: 37px 15px 15px;
     }
 
     &__card-content {
@@ -227,8 +224,8 @@
     }
 
     &__card-name {
-      max-width: 160px;
       margin-bottom: $lesserGap;
+      max-width: 160px;
       font-size: 16px;
       line-height: 21px;
       word-break: normal;
@@ -236,19 +233,19 @@
 
     &__card-btn {
       justify-content: center;
-      width: 100%;
       padding: 9px 10px;
+      width: 100%;
     }
 
     &__svg-number {
-      top: 17px;
       left: 16px;
+      top: 17px;
     }
 
     &__svg {
+      margin-right: 6px;
       width: 13px;
       height: 12px;
-      margin-right: 6px;
     }
 
     &__number {
@@ -257,8 +254,8 @@
     }
 
     &__top {
-      margin-bottom: 10px;
       align-items: center;
+      margin-bottom: 10px;
     }
 
     &__img-wrapper {

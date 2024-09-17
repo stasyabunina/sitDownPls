@@ -14,10 +14,10 @@
   &__sub-title {
     margin: 0;
     margin-bottom: 12px;
-    color: $black;
-    font-size: $titleFs;
     font-weight: 400;
+    font-size: $titleFs;
     line-height: 33px;
+    color: $black;
   }
 
   &__paragraph {
@@ -63,11 +63,11 @@
   }
 
   &__svg-wrapper {
+    margin-right: 12px;
     width: 25px;
     height: 25px;
     min-width: 25px;
     min-height: 25px;
-    margin-right: 12px;
   }
 
   &__sub-svg {
@@ -81,27 +81,27 @@
   &__opportunity-title {
     margin: 0;
     margin-bottom: 12px;
-    color: $secondary;
-    font-size: $biggerFs;
     font-weight: 600;
+    font-size: $biggerFs;
     line-height: 22px;
+    color: $secondary;
   }
 
   &__guarantee {
     display: block;
-    max-width: 624px;
     margin: 0;
     padding: 22px 0 22px 109px;
+    max-width: 624px;
     font-size: $titleFs;
     line-height: 36px;
     color: $black;
-    background-image: url("img/coop-bg.png");
-    background-repeat: no-repeat;
+    background-image: url("img/coop-bg.webp");
     background-position: left center;
+    background-repeat: no-repeat;
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .cooperation-main {
     padding-top: 32px;
   }
@@ -120,7 +120,7 @@
       padding: 0 0 0 52px;
       font-size: $biggerFs;
       line-height: 24px;
-      background-image: url("img/coop-bg-320.png");
+      background-image: url("img/coop-bg-320.webp");
     }
 
     &__paragraph {

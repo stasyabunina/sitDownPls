@@ -9,10 +9,10 @@
   }
 
   &__slide {
-    background-repeat: no-repeat;
-    background-color: $gold;
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $gold;
   }
 
   &__slide-content {
@@ -25,22 +25,22 @@
   }
 
   &__first-slide {
-    background-image: url('img/hero1.jpg');
+    background-image: url('img/hero1.webp');
   }
 
   &__second-slide {
-    background-image: url('img/hero2.jpg');
+    background-image: url('img/hero2.webp');
   }
 
   &__third-slide {
-    background-image: url('img/hero3.jpg');
+    background-image: url('img/hero3.webp');
   }
 
   &__title {
     margin: 0;
     margin-bottom: 49px;
-    font-size: 48px;
     font-weight: 700;
+    font-size: 48px;
     line-height: 65px;
     color: $gray;
   }
@@ -50,37 +50,37 @@
   }
 
   &__swiper-button {
+    outline: none;
     padding: 19px 50px;
     font-weight: 700;
     font-size: $biggerFs;
     line-height: $biggerLh;
     color: $white;
     background-color: $primary;
-    outline: none;
     transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
     &:focus-visible {
-      background-color: $primaryLight;
       border-color: $primaryShade;
+      background-color: $primaryLight;
     }
 
     &:active {
-      background-color: $primaryShade;
       border-color: $primaryShade;
+      background-color: $primaryShade;
     }
 
     &:disabled {
+      border-color: $grayMd;
       color: $gray;
       background-color: $grayMd;
-      border-color: $grayMd;
     }
   }
 
   &__pagination {
+    z-index: 0;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
-    z-index: 0;
   }
 
   &__mobile-button {
@@ -99,18 +99,18 @@
   bottom: 23px;
 }
 
-@media (max-width: 1200px) {
+@media (width <= 1200px) {
   .hero {
     &__first-slide {
-      background-image: url('img/hero1-1024.jpg');
+      background-image: url('img/hero1-1024.webp');
     }
 
     &__second-slide {
-      background-image: url('img/hero2-1024.jpg');
+      background-image: url('img/hero2-1024.webp');
     }
 
     &__third-slide {
-      background-image: url('img/hero3-1024.jpg');
+      background-image: url('img/hero3-1024.webp');
     }
 
     &__slide-content {
@@ -123,23 +123,23 @@
   }
 }
 
-@media (max-width: 962px) {
+@media (width <= 962px) {
   .hero {
     &__first-slide {
-      background-image: url('img/hero1-768.jpg');
+      background-image: url('img/hero1-768.webp');
     }
 
     &__second-slide {
-      background-image: url('img/hero2-768.jpg');
+      background-image: url('img/hero2-768.webp');
     }
 
     &__third-slide {
-      background-image: url('img/hero3-768.jpg');
+      background-image: url('img/hero3-768.webp');
     }
   }
 }
 
-@media (max-width: 750px) {
+@media (width <= 750px) {
   .hero {
     &__slide {
       height: auto;
@@ -147,22 +147,22 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .hero {
     &__swiper-container {
       margin-bottom: $gap;
     }
 
     &__first-slide {
-      background-image: url('img/hero1-320.jpg');
+      background-image: url('img/hero1-320.webp');
     }
 
     &__second-slide {
-      background-image: url('img/hero2-320.jpg');
+      background-image: url('img/hero2-320.webp');
     }
 
     &__third-slide {
-      background-image: url('img/hero3-320.jpg');
+      background-image: url('img/hero3-320.webp');
     }
 
     &__title {
@@ -172,7 +172,7 @@
     }
 
     &__slide-content {
-      padding: 30px 18px 98px 18px;
+      padding: 30px 18px 98px;
       max-width: 204px;
     }
 
@@ -182,31 +182,31 @@
 
     &__mobile-button {
       display: flex;
-      width: 100%;
+      justify-content: center;
+      outline: none;
       padding: 19px 50px;
+      width: 100%;
       font-weight: 700;
       font-size: $biggerFs;
       line-height: $biggerLh;
       color: $white;
       background-color: $primary;
-      outline: none;
-      justify-content: center;
       transition: border-color .2s ease-in-out, background-color .2s ease-in-out, color .2s ease-in-out;
 
       &:focus-visible {
-        background-color: $primaryLight;
         border-color: $primaryShade;
+        background-color: $primaryLight;
       }
 
       &:active {
-        background-color: $primaryShade;
         border-color: $primaryShade;
+        background-color: $primaryShade;
       }
 
       &:disabled {
+        border-color: $grayMd;
         color: $gray;
         background-color: $grayMd;
-        border-color: $grayMd;
       }
     }
   }
